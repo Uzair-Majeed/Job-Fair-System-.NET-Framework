@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+//added masked text box to hide password
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
@@ -35,7 +36,7 @@ namespace WindowsFormsApp1
             conn.Open();
             MessageBox.Show("Connection Open");
             string em = textBox1.Text;
-            string pass = textBox2.Text;
+            string pass = maskedTextBox1.Text;
 
             string query = "SELECT COUNT(*) FROM user_email e JOIN Users u on u.user_id = e.user_id WHERE e.email = @email AND u.password = @password";
 

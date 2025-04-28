@@ -8,18 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//this form can be used for all user to update their profiles.
-//will push this.
+//added data grid view as there can be many applications to be reviewed.
 namespace WindowsFormsApp1
 {
-    public partial class profile_management : Form
+    public partial class Review_Application : Form
     {
-        public profile_management()
+        public Review_Application()
         {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

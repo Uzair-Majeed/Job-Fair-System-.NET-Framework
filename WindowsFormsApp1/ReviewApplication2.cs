@@ -8,18 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//this form can be used for all user to update their profiles.
-//will push this.
 namespace WindowsFormsApp1
 {
-    public partial class profile_management : Form
+    public partial class ReviewApplication2 : Form
     {
-        public profile_management()
+        public ReviewApplication2()
         {
             InitializeComponent();
+
+            comboBox1.Items.Add("Pending");
+            comboBox1.Items.Add("Accepted");
+            comboBox1.Items.Add("Rejected");
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
