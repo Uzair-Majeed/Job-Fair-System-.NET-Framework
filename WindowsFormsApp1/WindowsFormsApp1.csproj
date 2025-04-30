@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -52,15 +52,23 @@
     <Compile Include="Coordinator_dashboard.Designer.cs">
       <DependentUpon>Coordinator_dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="editprofile.cs" />
-    <Compile Include="editprofile.Designer.cs">
-      <DependentUpon>editprofile.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_academic_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_academic_info.Designer.cs">
+      <DependentUpon>Student_academic_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student_certifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_certifications.Designer.cs">
+      <DependentUpon>Student_certifications.cs</DependentUpon>
     </Compile>
     <Compile Include="Post_Job.cs">
       <SubType>Form</SubType>
@@ -112,6 +120,12 @@
     <Compile Include="student_dashboard.Designer.cs">
       <DependentUpon>student_dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="student_skill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student_skill.Designer.cs">
+      <DependentUpon>student_skill.cs</DependentUpon>
+    </Compile>
     <Compile Include="TPO_dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,9 +134,6 @@
     </Compile>
     <EmbeddedResource Include="Coordinator_dashboard.resx">
       <DependentUpon>Coordinator_dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="editprofile.resx">
-      <DependentUpon>editprofile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -157,8 +168,17 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Student_academic_info.resx">
+      <DependentUpon>Student_academic_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_certifications.resx">
+      <DependentUpon>Student_certifications.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="student_dashboard.resx">
       <DependentUpon>student_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student_skill.resx">
+      <DependentUpon>student_skill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TPO_dashboard.resx">
       <DependentUpon>TPO_dashboard.cs</DependentUpon>
