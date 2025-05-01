@@ -37,6 +37,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,10 +52,6 @@
             this.Student = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CheckInTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -79,6 +79,7 @@
             this.button10.TabIndex = 9;
             this.button10.Text = "LOGOUT";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button5
             // 
@@ -89,6 +90,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Booth Check-ins";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 
@@ -99,6 +101,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Assign Booths";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -109,6 +112,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Job Fairs";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -119,6 +123,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Profile";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -128,6 +133,7 @@
             this.button4.TabIndex = 26;
             this.button4.Text = "Go back";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -158,6 +164,46 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1055, 540);
             this.panel2.TabIndex = 28;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(28, 395);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(331, 26);
+            this.textBox3.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("The Bold Font", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(21, 350);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 25);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Staff : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("The Bold Font", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(23, 269);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(205, 25);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Venue Location : ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("The Bold Font", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(23, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 25);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Date : ";
             // 
             // button6
             // 
@@ -254,46 +300,6 @@
             this.Staff.MinimumWidth = 8;
             this.Staff.Name = "Staff";
             this.Staff.Width = 150;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("The Bold Font", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(23, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 25);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Date : ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("The Bold Font", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(23, 269);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 25);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Venue Location : ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("The Bold Font", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(21, 350);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 25);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Staff : ";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(28, 395);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(331, 26);
-            this.textBox3.TabIndex = 30;
             // 
             // manage_jobfairs
             // 

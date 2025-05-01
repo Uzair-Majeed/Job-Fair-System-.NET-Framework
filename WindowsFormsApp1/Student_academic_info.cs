@@ -16,5 +16,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void Student_academic_info_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

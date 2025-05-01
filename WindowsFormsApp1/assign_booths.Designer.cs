@@ -37,15 +37,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.BoothNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Student = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CheckInTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +88,7 @@
             this.button10.TabIndex = 9;
             this.button10.Text = "LOGOUT";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button5
             // 
@@ -98,6 +99,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Booth Check-ins";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 
@@ -108,6 +110,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Assign Booths";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -118,6 +121,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Job Fairs";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -128,6 +132,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Profile";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -137,6 +142,7 @@
             this.button4.TabIndex = 30;
             this.button4.Text = "Go back";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel2
             // 
@@ -154,6 +160,30 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1089, 506);
             this.panel2.TabIndex = 31;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(28, 230);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(331, 28);
+            this.comboBox3.TabIndex = 33;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(28, 313);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(331, 28);
+            this.comboBox2.TabIndex = 32;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(28, 134);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(331, 28);
+            this.comboBox1.TabIndex = 31;
             // 
             // label3
             // 
@@ -223,30 +253,6 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(688, 477);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(28, 134);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(331, 28);
-            this.comboBox1.TabIndex = 31;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(28, 313);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(331, 28);
-            this.comboBox2.TabIndex = 32;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(28, 230);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(331, 28);
-            this.comboBox3.TabIndex = 33;
             // 
             // BoothNumber
             // 

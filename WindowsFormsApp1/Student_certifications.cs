@@ -26,5 +26,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void Student_certifications_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
