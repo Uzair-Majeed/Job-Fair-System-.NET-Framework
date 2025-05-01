@@ -46,17 +46,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="assign_booths.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="assign_booths.Designer.cs">
+      <DependentUpon>assign_booths.cs</DependentUpon>
+    </Compile>
+    <Compile Include="boothTraffic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="boothTraffic.Designer.cs">
+      <DependentUpon>boothTraffic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Coordinator_dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Coordinator_dashboard.Designer.cs">
       <DependentUpon>Coordinator_dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Coordinator_profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coordinator_profile.Designer.cs">
+      <DependentUpon>Coordinator_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="coordinator_verify_std.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="coordinator_verify_std.Designer.cs">
+      <DependentUpon>coordinator_verify_std.cs</DependentUpon>
+    </Compile>
+    <Compile Include="coord_booth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="coord_booth.Designer.cs">
+      <DependentUpon>coord_booth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manage_jobfairs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manage_jobfairs.Designer.cs">
+      <DependentUpon>manage_jobfairs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="recruiter_profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recruiter_profile.Designer.cs">
+      <DependentUpon>recruiter_profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Student_academic_info.cs">
       <SubType>Form</SubType>
@@ -126,17 +168,47 @@
     <Compile Include="student_skill.Designer.cs">
       <DependentUpon>student_skill.cs</DependentUpon>
     </Compile>
+    <Compile Include="TPO_booth_checkin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TPO_booth_checkin.Designer.cs">
+      <DependentUpon>TPO_booth_checkin.cs</DependentUpon>
+    </Compile>
     <Compile Include="TPO_dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TPO_dashboard.Designer.cs">
       <DependentUpon>TPO_dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tpo_Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tpo_Profile.Designer.cs">
+      <DependentUpon>Tpo_Profile.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="assign_booths.resx">
+      <DependentUpon>assign_booths.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="boothTraffic.resx">
+      <DependentUpon>boothTraffic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Coordinator_dashboard.resx">
       <DependentUpon>Coordinator_dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Coordinator_profile.resx">
+      <DependentUpon>Coordinator_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="coordinator_verify_std.resx">
+      <DependentUpon>coordinator_verify_std.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="coord_booth.resx">
+      <DependentUpon>coord_booth.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manage_jobfairs.resx">
+      <DependentUpon>manage_jobfairs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Post_Job.resx">
       <DependentUpon>Post_Job.cs</DependentUpon>
@@ -159,6 +231,9 @@
     <EmbeddedResource Include="recruiter_interviews.resx">
       <DependentUpon>recruiter_interviews.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="recruiter_profile.resx">
+      <DependentUpon>recruiter_profile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReviewApplication2.resx">
       <DependentUpon>ReviewApplication2.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,8 +255,14 @@
     <EmbeddedResource Include="student_skill.resx">
       <DependentUpon>student_skill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TPO_booth_checkin.resx">
+      <DependentUpon>TPO_booth_checkin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TPO_dashboard.resx">
       <DependentUpon>TPO_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tpo_Profile.resx">
+      <DependentUpon>Tpo_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -8,25 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//this form can be used for all user to update their profiles.
-//will push this.
 namespace WindowsFormsApp1
 {
-    public partial class profile_management : Form
+    public partial class coord_booth : Form
     {
-        public profile_management()
+        public coord_booth()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
