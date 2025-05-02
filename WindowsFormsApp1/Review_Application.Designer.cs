@@ -51,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("The Bold Font", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(406, 21);
+            this.label1.Location = new System.Drawing.Point(508, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(317, 36);
             this.label1.TabIndex = 6;
@@ -70,7 +70,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(812, 443);
+            this.dataGridView1.Size = new System.Drawing.Size(818, 443);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -117,6 +117,7 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Go back";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel1
             // 
@@ -140,6 +141,7 @@
             this.button10.TabIndex = 9;
             this.button10.Text = "LOGOUT";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button5
             // 
@@ -150,6 +152,7 @@
             this.button5.TabIndex = 3;
             this.button5.Text = "Interviews";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -160,6 +163,7 @@
             this.button6.TabIndex = 2;
             this.button6.Text = "Review Job Applications";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -170,6 +174,7 @@
             this.button7.TabIndex = 1;
             this.button7.Text = "Post A job";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -180,6 +185,7 @@
             this.button8.TabIndex = 0;
             this.button8.Text = "Profile";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Review_Application
             // 

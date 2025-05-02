@@ -32,5 +32,47 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            recruiter_dashboard recruiter_Dashboard = new recruiter_dashboard();
+            this.Hide();
+            recruiter_Dashboard.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            recruiter_profile recruiter_Profile = new recruiter_profile();
+            this.Hide();
+            recruiter_Profile.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Post_Job post_Job = new Post_Job();
+            this.Hide();
+            post_Job.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Review_Application review_Application = new Review_Application();
+            this.Hide();
+            review_Application.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            recruiter_interviews recruiter_Interviews = new recruiter_interviews();
+            this.Hide();
+            recruiter_Interviews.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
     }
 }

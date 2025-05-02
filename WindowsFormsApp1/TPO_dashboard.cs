@@ -16,5 +16,40 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Tpo_Profile profile = new Tpo_Profile();
+            this.Hide();
+            profile.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            manage_jobfairs manage_Jobfairs = new manage_jobfairs();
+            this.Hide();
+            manage_Jobfairs.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            assign_booths assign_Booths = new assign_booths();
+            this.Hide();
+            assign_Booths.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            TPO_booth_checkin tPO_Booth_Checkin = new TPO_booth_checkin();
+            this.Hide();
+            tPO_Booth_Checkin.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            form1.Close();
+        }
     }
 }

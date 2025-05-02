@@ -37,7 +37,11 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button13 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -54,10 +58,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -96,6 +96,7 @@
             this.button10.TabIndex = 9;
             this.button10.Text = "LOGOUT";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button5
             // 
@@ -106,6 +107,7 @@
             this.button5.TabIndex = 3;
             this.button5.Text = "Interviews";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -116,6 +118,7 @@
             this.button6.TabIndex = 2;
             this.button6.Text = "Review Job Applications";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -126,6 +129,7 @@
             this.button7.TabIndex = 1;
             this.button7.Text = "Post A job";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -136,6 +140,7 @@
             this.button8.TabIndex = 0;
             this.button8.Text = "Profile";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button4
             // 
@@ -145,6 +150,7 @@
             this.button4.TabIndex = 25;
             this.button4.Text = "Go back";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel2
             // 
@@ -163,6 +169,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(848, 528);
             this.panel2.TabIndex = 26;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(340, 153);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(323, 26);
+            this.textBox1.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("The Bold Font", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(174, 152);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(144, 27);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Company : ";
             // 
             // panel3
             // 
@@ -183,6 +206,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(848, 323);
             this.panel3.TabIndex = 27;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(340, 234);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(323, 26);
+            this.textBox6.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("The Bold Font", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(116, 229);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(202, 27);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "NEW COMPANY : ";
             // 
             // textBox8
             // 
@@ -321,40 +361,6 @@
             this.label2.Size = new System.Drawing.Size(94, 27);
             this.label2.TabIndex = 7;
             this.label2.Text = "Name : ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("The Bold Font", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(174, 152);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(144, 27);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Company : ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(340, 153);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(323, 26);
-            this.textBox1.TabIndex = 29;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("The Bold Font", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(116, 229);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(202, 27);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "NEW COMPANY : ";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(340, 234);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(323, 26);
-            this.textBox6.TabIndex = 30;
             // 
             // recruiter_profile
             // 

@@ -49,7 +49,43 @@ namespace WindowsFormsApp1
             if (result > 0)
             {
                 MessageBox.Show("Login Successful!");
+                string query2 = "SELECT u.Role FROM users u JOIN user_email e on u.user_id = e.user_id WHERE e.email = @email AND u.password = @password";
 
+                SqlCommand cm2 = new SqlCommand(query2, conn);
+                cm2.Parameters.AddWithValue("@email", em);
+                cm2.Parameters.AddWithValue("@password", pass);
+
+                string role = (string)cm2.ExecuteScalar();
+
+                if (role == "Student")
+                {
+                    student_dashboard student_Dashboard = new student_dashboard();
+                    this.Hide();
+                    student_Dashboard.Show();
+
+                }
+                else if (role == "Recruiter") {
+                    recruiter_dashboard recruiter_Dashboard = new recruiter_dashboard();
+                    this.Hide();
+                    recruiter_Dashboard.Show();
+                }
+                else if (role == "TPO")
+                {
+                    TPO_dashboard tPO_Dashboard = new TPO_dashboard();
+                    this.Hide();
+
+                    tPO_Dashboard.Show();
+
+                }
+                else
+                {
+                    Coordinator_dashboard coordinator_Dashboard = new Coordinator_dashboard();
+                    this.Hide();
+
+                    coordinator_Dashboard.Show();
+                }
+
+                cm2.Dispose();
 
             }
             else
@@ -57,7 +93,6 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Invalid email or password.");
             }
 
-            cm.ExecuteNonQuery();
             cm.Dispose();
             conn.Close();
         }
