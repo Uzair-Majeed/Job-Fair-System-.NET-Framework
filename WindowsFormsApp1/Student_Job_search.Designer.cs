@@ -179,10 +179,10 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(38, 44);
+            this.panel1.Location = new System.Drawing.Point(38, 62);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 481);
+            this.panel1.Size = new System.Drawing.Size(200, 463);
             this.panel1.TabIndex = 4;
             // 
             // button10
@@ -321,7 +321,7 @@
             this.button12.Location = new System.Drawing.Point(55, 4);
             this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(95, 26);
+            this.button12.Size = new System.Drawing.Size(95, 36);
             this.button12.TabIndex = 10;
             this.button12.Text = "Go back";
             this.button12.UseVisualStyleBackColor = true;

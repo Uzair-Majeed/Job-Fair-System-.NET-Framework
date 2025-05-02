@@ -45,21 +45,21 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -105,6 +105,7 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "Go back";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -142,6 +143,7 @@
             this.button10.TabIndex = 9;
             this.button10.Text = "LOGOUT";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -152,6 +154,7 @@
             this.button9.TabIndex = 8;
             this.button9.Text = "Booth Check-ins";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -162,6 +165,7 @@
             this.button8.TabIndex = 7;
             this.button8.Text = "Reviews";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -172,6 +176,7 @@
             this.button7.TabIndex = 6;
             this.button7.Text = "Interviews";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -182,6 +187,7 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "My Applications";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -192,6 +198,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Job Search";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -202,6 +209,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Academic Info";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -212,6 +220,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Certifications";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button11
             // 
@@ -222,6 +231,7 @@
             this.button11.TabIndex = 1;
             this.button11.Text = "Skills";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -232,6 +242,7 @@
             this.button12.TabIndex = 0;
             this.button12.Text = "Profile";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // panel2
             // 
@@ -249,15 +260,26 @@
             this.panel2.TabIndex = 18;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // label3
+            // maskedTextBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("The Bold Font", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(222, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 27);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Email : ";
+            this.maskedTextBox1.Location = new System.Drawing.Point(340, 122);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(323, 26);
+            this.maskedTextBox1.TabIndex = 25;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(340, 39);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(323, 26);
+            this.textBox5.TabIndex = 24;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(340, 83);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(323, 26);
+            this.textBox4.TabIndex = 23;
             // 
             // label5
             // 
@@ -268,6 +290,16 @@
             this.label5.Size = new System.Drawing.Size(156, 27);
             this.label5.TabIndex = 16;
             this.label5.Text = "Password : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("The Bold Font", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(222, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 27);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Email : ";
             // 
             // label6
             // 
@@ -336,33 +368,12 @@
             this.panel3.Size = new System.Drawing.Size(848, 306);
             this.panel3.TabIndex = 26;
             // 
-            // textBox3
+            // textBox8
             // 
-            this.textBox3.Location = new System.Drawing.Point(340, 170);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(323, 26);
-            this.textBox3.TabIndex = 21;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(340, 212);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(323, 26);
-            this.textBox2.TabIndex = 22;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(340, 83);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(323, 26);
-            this.textBox4.TabIndex = 23;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(340, 39);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(323, 26);
-            this.textBox5.TabIndex = 24;
+            this.textBox8.Location = new System.Drawing.Point(340, 124);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(323, 26);
+            this.textBox8.TabIndex = 27;
             // 
             // textBox7
             // 
@@ -371,19 +382,19 @@
             this.textBox7.Size = new System.Drawing.Size(323, 26);
             this.textBox7.TabIndex = 26;
             // 
-            // textBox8
+            // textBox2
             // 
-            this.textBox8.Location = new System.Drawing.Point(340, 124);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(323, 26);
-            this.textBox8.TabIndex = 27;
+            this.textBox2.Location = new System.Drawing.Point(340, 212);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(323, 26);
+            this.textBox2.TabIndex = 22;
             // 
-            // maskedTextBox1
+            // textBox3
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(340, 122);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(323, 26);
-            this.maskedTextBox1.TabIndex = 25;
+            this.textBox3.Location = new System.Drawing.Point(340, 170);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(323, 26);
+            this.textBox3.TabIndex = 21;
             // 
             // profile_management
             // 

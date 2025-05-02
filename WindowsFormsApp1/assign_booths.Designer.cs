@@ -82,7 +82,7 @@
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(17, 238);
+            this.button10.Location = new System.Drawing.Point(17, 278);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(165, 36);
             this.button10.TabIndex = 9;
@@ -95,7 +95,7 @@
             this.button5.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(17, 182);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(165, 50);
+            this.button5.Size = new System.Drawing.Size(165, 90);
             this.button5.TabIndex = 4;
             this.button5.Text = "Booth Check-ins";
             this.button5.UseVisualStyleBackColor = true;

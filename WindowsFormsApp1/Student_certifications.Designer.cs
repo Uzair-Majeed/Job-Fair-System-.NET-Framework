@@ -46,6 +46,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -124,22 +125,23 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(27, 41);
+            this.panel1.Location = new System.Drawing.Point(27, 70);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 481);
+            this.panel1.Size = new System.Drawing.Size(200, 466);
             this.panel1.TabIndex = 4;
             // 
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(17, 418);
+            this.button10.Location = new System.Drawing.Point(17, 414);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(165, 36);
             this.button10.TabIndex = 9;
             this.button10.Text = "LOGOUT";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -151,6 +153,7 @@
             this.button9.TabIndex = 8;
             this.button9.Text = "Booth Check-ins";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -162,6 +165,7 @@
             this.button8.TabIndex = 7;
             this.button8.Text = "Reviews";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -173,6 +177,7 @@
             this.button7.TabIndex = 6;
             this.button7.Text = "Interviews";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -184,6 +189,7 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "My Applications";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -195,6 +201,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Job Search";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -206,6 +213,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Academic Info";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -218,6 +226,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Certifications";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -229,6 +238,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Skills";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -240,17 +250,30 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Profile";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(449, 41);
+            this.label1.Location = new System.Drawing.Point(522, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(348, 32);
+            this.label1.Size = new System.Drawing.Size(266, 32);
             this.label1.TabIndex = 3;
-            this.label1.Text = "STUDENT DASHBOARD";
+            this.label1.Text = "Your Certifications";
+            // 
+            // button12
+            // 
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(27, 11);
+            this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(95, 40);
+            this.button12.TabIndex = 12;
+            this.button12.Text = "Go back";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // Student_certifications
             // 
@@ -258,6 +281,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1040, 562);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -294,5 +318,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Certifications;
         private System.Windows.Forms.DataGridViewTextBoxColumn Organisation;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.Button button12;
     }
 }

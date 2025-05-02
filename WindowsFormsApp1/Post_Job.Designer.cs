@@ -53,6 +53,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +62,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.dateTimePicker1);
@@ -78,13 +82,13 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(256, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(868, 496);
+            this.panel1.Size = new System.Drawing.Size(868, 561);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(493, 449);
+            this.button1.Location = new System.Drawing.Point(492, 508);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 33);
             this.button1.TabIndex = 17;
@@ -254,7 +258,7 @@
             this.panel2.Controls.Add(this.button8);
             this.panel2.Location = new System.Drawing.Point(12, 95);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 481);
+            this.panel2.Size = new System.Drawing.Size(200, 561);
             this.panel2.TabIndex = 23;
             // 
             // button10
@@ -312,12 +316,30 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("The Bold Font", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(95, 447);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(212, 31);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Select Skills :";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(330, 450);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(227, 28);
+            this.comboBox2.TabIndex = 26;
+            // 
             // Post_Job
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1149, 646);
+            this.ClientSize = new System.Drawing.Size(1149, 679);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -359,5 +381,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

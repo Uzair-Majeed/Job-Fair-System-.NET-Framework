@@ -75,5 +75,26 @@ namespace WindowsFormsApp1
             form1.Show();
             this.Hide();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Student_Interviews student_Interviews = new Student_Interviews();
+            student_Interviews.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Student_Reviews student_Reviews = new Student_Reviews();
+            student_Reviews.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Student_Booth_checkins student_Booth_Checkins = new Student_Booth_checkins();
+            student_Booth_Checkins.Show();
+            this.Hide();
+        }
     }
 }
