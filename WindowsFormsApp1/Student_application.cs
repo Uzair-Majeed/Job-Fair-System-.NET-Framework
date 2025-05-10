@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,15 +20,13 @@ namespace WindowsFormsApp1
 
         private void button12_Click(object sender, EventArgs e)
         {
-            student_dashboard student_Dashboard = new student_dashboard();
-            this.Hide();
+            student_dashboard student_Dashboard = new student_dashboard(SessionData.UserId, SessionData.UserName, SessionData.email, SessionData.password); this.Hide();
             student_Dashboard.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            profile_management profile_Management = new profile_management();
-            this.Hide();
+            profile_management profile_Management = new profile_management(SessionData.UserId, SessionData.UserName, SessionData.email, SessionData.password); this.Hide();
             profile_Management.Show();
         }
 
@@ -92,6 +91,40 @@ namespace WindowsFormsApp1
             Form1 form1 = new Form1();
             this.Hide();
             form1.Show();
+        }
+
+        private void Student_application_Load(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MHBH552\\SQLEXPRESS;Initial Catalog=Job_Fair;Integrated Security=True");
+            conn.Open();
+
+            string query = @"SELECT j.title as Job_Title,
+                            c.name as Company_Name,
+                            u.name as Recruiter_Name,
+                            a.applied_date as Applied_Date,
+                            a.status as Status
+                            FROM APPLICATION a
+                            Join Job_Posting j on j.job_id = a.job_id
+                            Join RECRUITER r on r.recruiter_id = j.recruiter_id
+                            Join COMPANY c on c.company_id = j.company_id
+                            Join Users u on u.user_id = r.recruiter_id
+                            WHERE applicant_id = @studentId";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@studentId", student_dashboard.getUserId());
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            dataGridView1.DataSource = dt;
+
+            cmd.Dispose();
+            conn.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,14 +12,35 @@ namespace WindowsFormsApp1
 {
     public partial class TPO_dashboard : Form
     {
+        private int userId;
+        private string userName;
+        private string email;
+        private string password;
+
         public TPO_dashboard()
         {
+
             InitializeComponent();
+        }
+        public TPO_dashboard(int user_id, string name, string em, string pass)
+        {
+
+            InitializeComponent();
+            this.userId = user_id;
+            this.userName = name;
+            this.email = em;
+            this.password = pass;
+
+
+            SessionData.UserId = userId;
+            SessionData.email = email;
+            SessionData.password = password;
+            SessionData.UserName = userName;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Tpo_Profile profile = new Tpo_Profile();
+            Tpo_Profile profile = new Tpo_Profile(userId,userName,email,password);
             this.Hide();
             profile.Show();
         }
@@ -50,6 +71,11 @@ namespace WindowsFormsApp1
             Form1 form1 = new Form1();
             form1.Show();
             form1.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

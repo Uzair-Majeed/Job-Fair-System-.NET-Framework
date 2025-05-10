@@ -13,6 +13,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 //added masked text box to hide password
 namespace WindowsFormsApp1
 {
+
+    public static class SessionData
+    {
+        public static int UserId;
+        public static string UserName;
+        public static string email;
+        public static string password;
+        public static string companyName;
+    }
     public partial class Form1 : Form
     {
         public Form1()
@@ -49,6 +58,9 @@ namespace WindowsFormsApp1
             if (result > 0)
             {
                 MessageBox.Show("Login Successful!");
+
+                
+
                 string query2 = "SELECT u.Role FROM users u JOIN user_email e on u.user_id = e.user_id WHERE e.email = @email AND u.password = @password";
 
                 SqlCommand cm2 = new SqlCommand(query2, conn);
@@ -57,21 +69,45 @@ namespace WindowsFormsApp1
 
                 string role = (string)cm2.ExecuteScalar();
 
+                string query3 = "SELECT u.user_id FROM users u JOIN user_email e on u.user_id = e.user_id WHERE e.email = @email AND u.password = @password";
+
+                SqlCommand cm3 = new SqlCommand(query3, conn);
+                cm3.Parameters.AddWithValue("@email", em);
+                cm3.Parameters.AddWithValue("@password", pass);
+
+                int user_id = (int)cm3.ExecuteScalar();
+
+                string query4 = "SELECT u.name FROM users u JOIN user_email e on u.user_id = e.user_id WHERE e.email = @email AND u.password = @password";
+
+                SqlCommand cm4 = new SqlCommand(query4, conn);
+                cm4.Parameters.AddWithValue("@email", em);
+                cm4.Parameters.AddWithValue("@password", pass);
+
+                string name = (string)cm4.ExecuteScalar();
+
                 if (role == "Student")
                 {
-                    student_dashboard student_Dashboard = new student_dashboard();
+                    student_dashboard student_Dashboard = new student_dashboard(user_id,name,em,pass);
                     this.Hide();
                     student_Dashboard.Show();
 
                 }
-                else if (role == "Recruiter") {
-                    recruiter_dashboard recruiter_Dashboard = new recruiter_dashboard();
+                else if (role == "Recruiter")
+                {
+                    string query5 = "SELECT c.Name FROM COMPANY c JOIN RECRUITER r ON r.company_ID = c.company_ID WHERE r.recruiter_ID = @user_id";
+
+                    SqlCommand cm5 = new SqlCommand(query5, conn);
+                    cm5.Parameters.AddWithValue("@user_id", user_id);
+
+                    string company = (string)cm5.ExecuteScalar();
+
+                    recruiter_dashboard recruiter_Dashboard = new recruiter_dashboard(user_id, name, em, pass, company);
                     this.Hide();
                     recruiter_Dashboard.Show();
                 }
                 else if (role == "TPO")
                 {
-                    TPO_dashboard tPO_Dashboard = new TPO_dashboard();
+                    TPO_dashboard tPO_Dashboard = new TPO_dashboard(user_id, name, em, pass);
                     this.Hide();
 
                     tPO_Dashboard.Show();
@@ -79,7 +115,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    Coordinator_dashboard coordinator_Dashboard = new Coordinator_dashboard();
+                    Coordinator_dashboard coordinator_Dashboard = new Coordinator_dashboard(user_id, name, em, pass);
                     this.Hide();
 
                     coordinator_Dashboard.Show();
@@ -124,6 +160,11 @@ namespace WindowsFormsApp1
             Signup signup = new Signup();
             signup.Show(); 
             this.Hide();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

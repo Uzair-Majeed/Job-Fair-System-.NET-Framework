@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,19 +20,34 @@ namespace WindowsFormsApp1
 
         private void Student_academic_info_Load(object sender, EventArgs e)
         {
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MHBH552\\SQLEXPRESS;Initial Catalog=Job_Fair;Integrated Security=True");
+            conn.Open();
 
+            string query = @"SELECT a.degree_program, a.current_Semester, a.GPA FROM ACADEMIC_RECORD a WHERE a.student_id = @studentId";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@studentId", student_dashboard.getUserId());
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            dataGridView1.DataSource = dt;
+
+            cmd.Dispose();
+            conn.Close();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            student_dashboard student_Dashboard = new student_dashboard();
+            student_dashboard student_Dashboard = new student_dashboard(SessionData.UserId, SessionData.UserName, SessionData.email, SessionData.password);
             this.Hide();
             student_Dashboard.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            profile_management profile_Management = new profile_management();
+            profile_management profile_Management = new profile_management(SessionData.UserId, SessionData.UserName, SessionData.email, SessionData.password);
             this.Hide();
             profile_Management.Show();
         }
@@ -98,6 +114,44 @@ namespace WindowsFormsApp1
             Form1 form1 = new Form1();
             this.Hide();
             form1.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MHBH552\\SQLEXPRESS;Initial Catalog=Job_Fair;Integrated Security=True");
+            conn.Open();
+
+            string organization = textBox1.Text;
+            int currSemester = int.Parse(textBox2.Text);
+            float GPA = float.Parse(textBox3.Text);
+
+            if(GPA < 0.0f || GPA > 4.0f)
+            {
+                MessageBox.Show("GPA should be between 0.0 and 4.0");
+                return;
+            }
+
+            string query1 = "UPDATE ACADEMIC_RECORD SET degree_program = @degreeProgram, current_Semester = @currentSemester, GPA = @GPA WHERE student_id = @studentId";
+            SqlCommand cmd = new SqlCommand(query1, conn);
+            cmd.Parameters.AddWithValue("@studentId", student_dashboard.getUserId());
+            cmd.Parameters.AddWithValue("@degreeProgram", organization);
+            cmd.Parameters.AddWithValue("@currentSemester", currSemester);
+            cmd.Parameters.AddWithValue("@GPA", GPA);
+
+
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+
+            MessageBox.Show("UPDATED Successfully");
+
+            Student_academic_info_Load(sender, e);
+
+            conn.Close();
         }
     }
 }

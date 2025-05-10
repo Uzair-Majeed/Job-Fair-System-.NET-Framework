@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.job_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preferences = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button11 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
@@ -53,118 +54,162 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
+            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
+            this.jOBPOSTINGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.jOB_POSTINGTableAdapter = new WindowsFormsApp1.Job_FairDataSetTableAdapters.JOB_POSTINGTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jOBPOSTINGBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Controls.Add(this.comboBox4);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.comboBox3);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.button13);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.button11);
-            this.panel2.Location = new System.Drawing.Point(269, 102);
+            this.panel2.Location = new System.Drawing.Point(269, 78);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(756, 422);
+            this.panel2.Size = new System.Drawing.Size(1274, 639);
             this.panel2.TabIndex = 5;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "NONE"});
+            this.comboBox4.Location = new System.Drawing.Point(1028, 32);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(232, 28);
+            this.comboBox4.TabIndex = 17;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(948, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 25);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Skills";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "NONE"});
+            this.comboBox3.Location = new System.Drawing.Point(750, 30);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(171, 28);
+            this.comboBox3.TabIndex = 15;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(653, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 25);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Location";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(460, 29);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(171, 28);
+            this.comboBox2.TabIndex = 13;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(312, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 25);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Salary Range";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(21, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Job type";
+            // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(504, 568);
+            this.button13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(340, 36);
+            this.button13.TabIndex = 2;
+            this.button13.Text = "Apply For Job";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(26, 26);
+            this.comboBox1.Items.AddRange(new object[] {
+            "NONE",
+            "Internship",
+            "Full-Time"});
+            this.comboBox1.Location = new System.Drawing.Point(122, 30);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(352, 28);
+            this.comboBox1.Size = new System.Drawing.Size(171, 28);
             this.comboBox1.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.job_id,
-            this.Title,
-            this.Description,
-            this.Company_name,
-            this.Salary,
-            this.preferences,
-            this.deadline,
-            this.type});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 64);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 149);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(648, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(1224, 400);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // job_id
-            // 
-            this.job_id.HeaderText = "Job ID";
-            this.job_id.MinimumWidth = 6;
-            this.job_id.Name = "job_id";
-            this.job_id.Width = 45;
-            // 
-            // Title
-            // 
-            this.Title.HeaderText = "Job Title";
-            this.Title.MinimumWidth = 6;
-            this.Title.Name = "Title";
-            this.Title.Width = 75;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            this.Description.Width = 125;
-            // 
-            // Company_name
-            // 
-            this.Company_name.HeaderText = "Company Name";
-            this.Company_name.MinimumWidth = 6;
-            this.Company_name.Name = "Company_name";
-            this.Company_name.Width = 75;
-            // 
-            // Salary
-            // 
-            this.Salary.HeaderText = "Salary Range";
-            this.Salary.MinimumWidth = 6;
-            this.Salary.Name = "Salary";
-            this.Salary.Width = 50;
-            // 
-            // preferences
-            // 
-            this.preferences.HeaderText = "Location Preferences";
-            this.preferences.MinimumWidth = 6;
-            this.preferences.Name = "preferences";
-            this.preferences.Width = 75;
-            // 
-            // deadline
-            // 
-            this.deadline.HeaderText = "Deadline";
-            this.deadline.MinimumWidth = 6;
-            this.deadline.Name = "deadline";
-            this.deadline.Width = 75;
-            // 
-            // type
-            // 
-            this.type.HeaderText = "Job type";
-            this.type.MinimumWidth = 6;
-            this.type.Name = "type";
-            this.type.Width = 75;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(397, 21);
+            this.button11.Location = new System.Drawing.Point(581, 86);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(340, 36);
+            this.button11.Size = new System.Drawing.Size(175, 36);
             this.button11.TabIndex = 0;
-            this.button11.Text = "Apply for a Job";
+            this.button11.Text = "Apply Filter";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // panel1
             // 
@@ -182,7 +227,7 @@
             this.panel1.Location = new System.Drawing.Point(38, 62);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 463);
+            this.panel1.Size = new System.Drawing.Size(200, 655);
             this.panel1.TabIndex = 4;
             // 
             // button10
@@ -308,7 +353,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(553, 44);
+            this.label1.Location = new System.Drawing.Point(819, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 32);
             this.label1.TabIndex = 3;
@@ -327,12 +372,26 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // job_FairDataSet
+            // 
+            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
+            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // jOBPOSTINGBindingSource
+            // 
+            this.jOBPOSTINGBindingSource.DataMember = "JOB_POSTING";
+            this.jOBPOSTINGBindingSource.DataSource = this.job_FairDataSet;
+            // 
+            // jOB_POSTINGTableAdapter
+            // 
+            this.jOB_POSTINGTableAdapter.ClearBeforeFill = true;
+            // 
             // Student_Job_search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1091, 562);
+            this.ClientSize = new System.Drawing.Size(1570, 728);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -340,9 +399,13 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Student_Job_search";
             this.Text = "Student_Job_search";
+            this.Load += new System.EventHandler(this.Student_Job_search_Load);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jOBPOSTINGBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,14 +429,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn job_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Company_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Salary;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preferences;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deadline;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.Button button12;
+        private Job_FairDataSet job_FairDataSet;
+        private System.Windows.Forms.BindingSource jOBPOSTINGBindingSource;
+        private Job_FairDataSetTableAdapters.JOB_POSTINGTableAdapter jOB_POSTINGTableAdapter;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

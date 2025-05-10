@@ -82,11 +82,14 @@
     <Compile Include="coord_booth.Designer.cs">
       <DependentUpon>coord_booth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form1.cs" />
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Job_FairDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Job_FairDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="manage_jobfairs.cs">
       <SubType>Form</SubType>
@@ -318,6 +321,17 @@
     <EmbeddedResource Include="Tpo_Profile.resx">
       <DependentUpon>Tpo_Profile.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Job_FairDataSet.xsc">
+      <DependentUpon>Job_FairDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Job_FairDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Job_FairDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Job_FairDataSet.xss">
+      <DependentUpon>Job_FairDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

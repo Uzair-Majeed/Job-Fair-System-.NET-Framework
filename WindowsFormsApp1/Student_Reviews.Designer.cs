@@ -28,18 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.jobtitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recruiter_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.review_comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
@@ -54,135 +51,122 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
+            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
+            this.rEVIEWBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rEVIEWTableAdapter = new WindowsFormsApp1.Job_FairDataSetTableAdapters.REVIEWTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rEVIEWBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.richTextBox1);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox3);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.button12);
             this.panel2.Controls.Add(this.button11);
             this.panel2.Location = new System.Drawing.Point(260, 100);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(756, 422);
+            this.panel2.Size = new System.Drawing.Size(866, 536);
             this.panel2.TabIndex = 5;
             // 
-            // textBox1
+            // richTextBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(156, 72);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(399, 26);
-            this.textBox1.TabIndex = 2;
+            this.richTextBox1.Location = new System.Drawing.Point(263, 152);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(386, 73);
+            this.richTextBox1.TabIndex = 19;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(27, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(205, 32);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Add Comment";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(58, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(174, 32);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Give Rating";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(18, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(230, 32);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Select Interview";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(460, 29);
+            this.comboBox2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBox2.Location = new System.Drawing.Point(263, 101);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(86, 28);
+            this.comboBox2.Size = new System.Drawing.Size(386, 28);
             this.comboBox2.TabIndex = 1;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(25, 70);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(105, 28);
-            this.comboBox3.TabIndex = 1;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(25, 29);
+            this.comboBox1.Location = new System.Drawing.Point(263, 39);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(386, 28);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.jobtitle,
-            this.company_name,
-            this.recruiter_name,
-            this.rating,
-            this.review_comments});
-            this.dataGridView1.Location = new System.Drawing.Point(25, 130);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 249);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(717, 265);
+            this.dataGridView1.Size = new System.Drawing.Size(801, 265);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // jobtitle
-            // 
-            this.jobtitle.HeaderText = "job title";
-            this.jobtitle.MinimumWidth = 6;
-            this.jobtitle.Name = "jobtitle";
-            this.jobtitle.Width = 125;
-            // 
-            // company_name
-            // 
-            this.company_name.HeaderText = "company name";
-            this.company_name.MinimumWidth = 6;
-            this.company_name.Name = "company_name";
-            this.company_name.Width = 125;
-            // 
-            // recruiter_name
-            // 
-            this.recruiter_name.HeaderText = "Recruiter Name";
-            this.recruiter_name.MinimumWidth = 6;
-            this.recruiter_name.Name = "recruiter_name";
-            this.recruiter_name.Width = 125;
-            // 
-            // rating
-            // 
-            this.rating.HeaderText = "Rating";
-            this.rating.MinimumWidth = 6;
-            this.rating.Name = "rating";
-            this.rating.Width = 125;
-            // 
-            // review_comments
-            // 
-            this.review_comments.HeaderText = "Review Comments";
-            this.review_comments.MinimumWidth = 6;
-            this.review_comments.Name = "review_comments";
-            this.review_comments.Width = 125;
-            // 
-            // button12
-            // 
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(576, 64);
-            this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(165, 36);
-            this.button12.TabIndex = 1;
-            this.button12.Text = "Add Comment";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button11_Click);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(576, 22);
+            this.button11.Location = new System.Drawing.Point(675, 103);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(165, 36);
             this.button11.TabIndex = 1;
-            this.button11.Text = "Add a review";
+            this.button11.Text = "Submit";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
@@ -202,7 +186,7 @@
             this.panel1.Location = new System.Drawing.Point(29, 58);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 464);
+            this.panel1.Size = new System.Drawing.Size(200, 578);
             this.panel1.TabIndex = 4;
             // 
             // button10
@@ -336,6 +320,7 @@
             this.label1.Size = new System.Drawing.Size(200, 32);
             this.label1.TabIndex = 3;
             this.label1.Text = "Your Reviews";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button13
             // 
@@ -349,12 +334,26 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
+            // job_FairDataSet
+            // 
+            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
+            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rEVIEWBindingSource
+            // 
+            this.rEVIEWBindingSource.DataMember = "REVIEW";
+            this.rEVIEWBindingSource.DataSource = this.job_FairDataSet;
+            // 
+            // rEVIEWTableAdapter
+            // 
+            this.rEVIEWTableAdapter.ClearBeforeFill = true;
+            // 
             // Student_Reviews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1045, 562);
+            this.ClientSize = new System.Drawing.Size(1191, 665);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -362,10 +361,13 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Student_Reviews";
             this.Text = "Student_Reviews";
+            this.Load += new System.EventHandler(this.Student_Reviews_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rEVIEWBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,17 +389,16 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobtitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn company_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recruiter_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rating;
-        private System.Windows.Forms.DataGridViewTextBoxColumn review_comments;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private Job_FairDataSet job_FairDataSet;
+        private System.Windows.Forms.BindingSource rEVIEWBindingSource;
+        private Job_FairDataSetTableAdapters.REVIEWTableAdapter rEVIEWTableAdapter;
     }
 }

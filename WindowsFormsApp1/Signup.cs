@@ -39,37 +39,74 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MHBH552\\SQLEXPRESS;Initial Catalog=Job_Fair;Integrated Security=True"); //Connection String
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MHBH552\\SQLEXPRESS;Initial Catalog=Job_Fair;Integrated Security=True");
             conn.Open();
             MessageBox.Show("Connection Open");
-            SqlCommand cm;
 
             string name = textBox1.Text;
             string email = textBox2.Text;
             string pass = textBox3.Text;
             string role = comboBox1.Text;
 
-            string query1 = "select MAX(user_ID) From Users";
-            cm = new SqlCommand(query1, conn);
-
-            int user_id = (int)cm.ExecuteScalar();
-
-            cm.Dispose();
-            user_id.ToString();
-
-            string query2 = "insert into USERS(user_id,password,role,name) values ('" + user_id + "','" + pass + "','" + role + "','" + name + "')";
-
-            cm = new SqlCommand(query2, conn);
+            string query1 = "SELECT MAX(user_ID) FROM USERS";
+            SqlCommand cm = new SqlCommand(query1, conn);
+            object result = cm.ExecuteScalar();
+            int user_id = (result != DBNull.Value) ? Convert.ToInt32(result) + 1 : 1;
             cm.Dispose();
 
-            string query3 = "insert into USER_Email(email,user_id) values('" + email + "','" + user_id + "')";
+            string query2 = "INSERT INTO USERS(user_id, password, role, name) VALUES (@userId, @password, @role, @name)";
+            SqlCommand cm2 = new SqlCommand(query2, conn);
+            cm2.Parameters.AddWithValue("@userId", user_id);
+            cm2.Parameters.AddWithValue("@password", pass);
+            cm2.Parameters.AddWithValue("@role", role);
+            cm2.Parameters.AddWithValue("@name", name);
+            cm2.ExecuteNonQuery();
+            cm2.Dispose();
 
-            cm = new SqlCommand(query3, conn);
+            if (role == "Student")
+            {
+                string query3 = "INSERT INTO Student(student_id) VALUES (@user_id)";
+                SqlCommand cm3 = new SqlCommand(query3, conn);
+                cm3.Parameters.AddWithValue("@user_id", user_id);
+                cm3.ExecuteNonQuery();
+                cm3.Dispose();
+            }
+            else if (role == "Recruiter")
+            {
+                string query3 = "INSERT INTO Recruiter(recruiter_id, company_ID) VALUES (@user_id, NULL)";
+                SqlCommand cm3 = new SqlCommand(query3, conn);
+                cm3.Parameters.AddWithValue("@user_id", user_id);
+                cm3.ExecuteNonQuery();
+                cm3.Dispose();
+            }
+            else if (role == "TPO")
+            {
+                string query3 = "INSERT INTO TPO(TPO_id) VALUES (@user_id)";
+                SqlCommand cm3 = new SqlCommand(query3, conn);
+                cm3.Parameters.AddWithValue("@user_id", user_id);
+                cm3.ExecuteNonQuery();
+                cm3.Dispose();
+            }
+            else
+            {
+                string query3 = "INSERT INTO Coordinator(Coordinator_id) VALUES (@user_id)";
+                SqlCommand cm3 = new SqlCommand(query3, conn);
+                cm3.Parameters.AddWithValue("@user_id", user_id);
+                cm3.ExecuteNonQuery();
+                cm3.Dispose();
+            }
 
-            MessageBox.Show("SIGNUP SUCCESSFULL !!");
-            cm.ExecuteNonQuery();
-            cm.Dispose();
+            string query4 = "INSERT INTO USER_Email(email, user_id) VALUES (@email, @user_id)";
+            SqlCommand cm4 = new SqlCommand(query4, conn);
+            cm4.Parameters.AddWithValue("@email", email);
+            cm4.Parameters.AddWithValue("@user_id", user_id);
+            cm4.ExecuteNonQuery();
+            cm4.Dispose();
+
             conn.Close();
+            MessageBox.Show("SIGNUP SUCCESSFUL!");
+
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -83,6 +120,21 @@ namespace WindowsFormsApp1
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

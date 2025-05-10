@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
@@ -40,7 +41,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cOMPANYBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button13 = new System.Windows.Forms.Button();
@@ -58,9 +61,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cOMPANYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cOMPANYTableAdapter = new WindowsFormsApp1.Job_FairDataSetTableAdapters.COMPANYTableAdapter();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cOMPANYBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOMPANYBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,6 +81,7 @@
             this.label1.Size = new System.Drawing.Size(122, 31);
             this.label1.TabIndex = 23;
             this.label1.Text = "Profile";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -167,7 +176,7 @@
             this.panel2.Location = new System.Drawing.Point(298, 63);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(848, 528);
+            this.panel2.Size = new System.Drawing.Size(848, 531);
             this.panel2.TabIndex = 26;
             // 
             // textBox1
@@ -176,6 +185,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(323, 26);
             this.textBox1.TabIndex = 29;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label10
             // 
@@ -190,7 +200,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.RosyBrown;
-            this.panel3.Controls.Add(this.textBox6);
+            this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.textBox8);
             this.panel3.Controls.Add(this.button13);
@@ -204,15 +214,30 @@
             this.panel3.Controls.Add(this.label8);
             this.panel3.Location = new System.Drawing.Point(0, 202);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(848, 323);
+            this.panel3.Size = new System.Drawing.Size(848, 329);
             this.panel3.TabIndex = 27;
             // 
-            // textBox6
+            // comboBox1
             // 
-            this.textBox6.Location = new System.Drawing.Point(340, 234);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(323, 26);
-            this.textBox6.TabIndex = 30;
+            this.comboBox1.DataSource = this.cOMPANYBindingSource1;
+            this.comboBox1.DisplayMember = "Name";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(340, 234);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(323, 28);
+            this.comboBox1.TabIndex = 30;
+            this.comboBox1.ValueMember = "company_ID";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // cOMPANYBindingSource1
+            // 
+            this.cOMPANYBindingSource1.DataMember = "COMPANY";
+            this.cOMPANYBindingSource1.DataSource = this.job_FairDataSet;
+            // 
+            // job_FairDataSet
+            // 
+            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
+            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label11
             // 
@@ -239,6 +264,7 @@
             this.button13.TabIndex = 19;
             this.button13.Text = "Save";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // textBox7
             // 
@@ -317,6 +343,7 @@
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(323, 26);
             this.maskedTextBox1.TabIndex = 25;
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // textBox5
             // 
@@ -324,6 +351,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(323, 26);
             this.textBox5.TabIndex = 24;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox4
             // 
@@ -331,6 +359,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(323, 26);
             this.textBox4.TabIndex = 23;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label5
             // 
@@ -362,6 +391,15 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Name : ";
             // 
+            // cOMPANYBindingSource
+            // 
+            this.cOMPANYBindingSource.DataMember = "COMPANY";
+            this.cOMPANYBindingSource.DataSource = this.job_FairDataSet;
+            // 
+            // cOMPANYTableAdapter
+            // 
+            this.cOMPANYTableAdapter.ClearBeforeFill = true;
+            // 
             // recruiter_profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -374,11 +412,15 @@
             this.Controls.Add(this.label1);
             this.Name = "recruiter_profile";
             this.Text = "recruiter_profile";
+            this.Load += new System.EventHandler(this.recruiter_profile_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cOMPANYBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOMPANYBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,7 +456,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private Job_FairDataSet job_FairDataSet;
+        private System.Windows.Forms.BindingSource cOMPANYBindingSource;
+        private Job_FairDataSetTableAdapters.COMPANYTableAdapter cOMPANYTableAdapter;
+        private System.Windows.Forms.BindingSource cOMPANYBindingSource1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -42,16 +43,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.booth_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Booth_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Event_Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Event_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Event_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkin_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button13 = new System.Windows.Forms.Button();
+            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
+            this.bOOTHCHECKINBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bOOTH_CHECKINTableAdapter = new WindowsFormsApp1.Job_FairDataSetTableAdapters.BOOTH_CHECKINTableAdapter();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bOOTHCHECKINBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -204,6 +204,7 @@
             this.label1.Size = new System.Drawing.Size(227, 32);
             this.label1.TabIndex = 3;
             this.label1.Text = "Booth Checkins";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -218,62 +219,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.booth_id,
-            this.Booth_location,
-            this.Event_Title,
-            this.Event_location,
-            this.Event_date,
-            this.checkin_time});
             this.dataGridView1.Location = new System.Drawing.Point(24, 22);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(709, 390);
+            this.dataGridView1.Size = new System.Drawing.Size(729, 390);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // booth_id
-            // 
-            this.booth_id.HeaderText = "Booth ID";
-            this.booth_id.MinimumWidth = 6;
-            this.booth_id.Name = "booth_id";
-            this.booth_id.Width = 125;
-            // 
-            // Booth_location
-            // 
-            this.Booth_location.HeaderText = "Booth Location";
-            this.Booth_location.MinimumWidth = 6;
-            this.Booth_location.Name = "Booth_location";
-            this.Booth_location.Width = 125;
-            // 
-            // Event_Title
-            // 
-            this.Event_Title.HeaderText = "Event Title";
-            this.Event_Title.MinimumWidth = 6;
-            this.Event_Title.Name = "Event_Title";
-            this.Event_Title.Width = 125;
-            // 
-            // Event_location
-            // 
-            this.Event_location.HeaderText = "Event_location";
-            this.Event_location.MinimumWidth = 6;
-            this.Event_location.Name = "Event_location";
-            this.Event_location.Width = 125;
-            // 
-            // Event_date
-            // 
-            this.Event_date.HeaderText = "Event Date";
-            this.Event_date.MinimumWidth = 6;
-            this.Event_date.Name = "Event_date";
-            this.Event_date.Width = 125;
-            // 
-            // checkin_time
-            // 
-            this.checkin_time.HeaderText = "Check-in Time";
-            this.checkin_time.MinimumWidth = 6;
-            this.checkin_time.Name = "checkin_time";
-            this.checkin_time.Width = 125;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button13
             // 
@@ -286,6 +239,20 @@
             this.button13.Text = "Go back";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // job_FairDataSet
+            // 
+            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
+            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bOOTHCHECKINBindingSource
+            // 
+            this.bOOTHCHECKINBindingSource.DataMember = "BOOTH_CHECKIN";
+            this.bOOTHCHECKINBindingSource.DataSource = this.job_FairDataSet;
+            // 
+            // bOOTH_CHECKINTableAdapter
+            // 
+            this.bOOTH_CHECKINTableAdapter.ClearBeforeFill = true;
             // 
             // Student_Booth_checkins
             // 
@@ -300,9 +267,12 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Student_Booth_checkins";
             this.Text = "Student_Booth_checkins";
+            this.Load += new System.EventHandler(this.Student_Booth_checkins_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bOOTHCHECKINBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,12 +294,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn booth_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Booth_location;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Event_Title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Event_location;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Event_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn checkin_time;
         private System.Windows.Forms.Button button13;
+        private Job_FairDataSet job_FairDataSet;
+        private System.Windows.Forms.BindingSource bOOTHCHECKINBindingSource;
+        private Job_FairDataSetTableAdapters.BOOTH_CHECKINTableAdapter bOOTH_CHECKINTableAdapter;
     }
 }

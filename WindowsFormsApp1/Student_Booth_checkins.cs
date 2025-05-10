@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,15 +20,13 @@ namespace WindowsFormsApp1
 
         private void button13_Click(object sender, EventArgs e)
         {
-            student_dashboard student_Dashboard = new student_dashboard();
-            this.Hide();
+            student_dashboard student_Dashboard = new student_dashboard(SessionData.UserId, SessionData.UserName, SessionData.email, SessionData.password); this.Hide();
             student_Dashboard.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            profile_management profile_Management = new profile_management();
-            this.Hide();
+            profile_management profile_Management = new profile_management(SessionData.UserId, SessionData.UserName, SessionData.email, SessionData.password); this.Hide();
             profile_Management.Show();
         }
 
@@ -92,6 +91,55 @@ namespace WindowsFormsApp1
             Form1 form1 = new Form1();
             this.Hide();
             form1.Show();
+        }
+
+        private void Student_Booth_checkins_Load(object sender, EventArgs e)
+        {
+
+
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MHBH552\\SQLEXPRESS;Initial Catalog=Job_Fair;Integrated Security=True");
+            conn.Open();
+
+            string query = @"
+            SELECT 
+                JFE.title AS Event_Title,
+                B.location AS Booth_Location,
+                BC.checkIn_Time,
+                U.Name AS Coordinator_Name
+            FROM 
+                BOOTH_CHECKIN BC
+            JOIN 
+                BOOTH B ON BC.booth_ID = B.booth_ID
+            JOIN 
+                JOB_FAIR_EVENTS JFE ON BC.eventID = JFE.eventID
+            LEFT JOIN 
+                COORDINATOR C ON B.coordinator_ID = C.coordinator_ID
+            LEFT JOIN 
+                USERS U ON C.coordinator_ID = U.user_ID
+            WHERE 
+                BC.student_ID = @StudentID";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@StudentID", student_dashboard.getUserId());
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            dataGridView1.DataSource = dt;
+
+            cmd.Dispose();
+            conn.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

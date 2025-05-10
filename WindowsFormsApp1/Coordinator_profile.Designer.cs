@@ -69,6 +69,7 @@
             this.label1.Size = new System.Drawing.Size(122, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "Profile";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -197,6 +198,7 @@
             this.button13.TabIndex = 19;
             this.button13.Text = "Save";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // textBox7
             // 

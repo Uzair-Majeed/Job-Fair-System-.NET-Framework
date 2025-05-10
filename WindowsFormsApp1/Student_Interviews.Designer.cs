@@ -28,15 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Event_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeslot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Event_Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Recruiter_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Event_Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -50,9 +44,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
+            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
+            this.iNTERVIEWSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iNTERVIEWSTableAdapter = new WindowsFormsApp1.Job_FairDataSetTableAdapters.INTERVIEWSTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iNTERVIEWSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -68,14 +67,6 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Company_name,
-            this.Event_Date,
-            this.timeslot,
-            this.status,
-            this.Event_Title,
-            this.Recruiter_Name,
-            this.Event_Location});
             this.dataGridView1.Location = new System.Drawing.Point(25, 22);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
@@ -84,55 +75,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(711, 384);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Company_name
-            // 
-            this.Company_name.HeaderText = "Company Name";
-            this.Company_name.MinimumWidth = 6;
-            this.Company_name.Name = "Company_name";
-            this.Company_name.Width = 125;
-            // 
-            // Event_Date
-            // 
-            this.Event_Date.HeaderText = "Event Date";
-            this.Event_Date.MinimumWidth = 6;
-            this.Event_Date.Name = "Event_Date";
-            this.Event_Date.Width = 125;
-            // 
-            // timeslot
-            // 
-            this.timeslot.HeaderText = "TimeSlot";
-            this.timeslot.MinimumWidth = 6;
-            this.timeslot.Name = "timeslot";
-            this.timeslot.Width = 125;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Status";
-            this.status.MinimumWidth = 6;
-            this.status.Name = "status";
-            this.status.Width = 125;
-            // 
-            // Event_Title
-            // 
-            this.Event_Title.HeaderText = "Event Name";
-            this.Event_Title.MinimumWidth = 6;
-            this.Event_Title.Name = "Event_Title";
-            this.Event_Title.Width = 125;
-            // 
-            // Recruiter_Name
-            // 
-            this.Recruiter_Name.HeaderText = "Recruiter Name";
-            this.Recruiter_Name.MinimumWidth = 6;
-            this.Recruiter_Name.Name = "Recruiter_Name";
-            this.Recruiter_Name.Width = 125;
-            // 
-            // Event_Location
-            // 
-            this.Event_Location.HeaderText = "Event Location";
-            this.Event_Location.MinimumWidth = 6;
-            this.Event_Location.Name = "Event_Location";
-            this.Event_Location.Width = 125;
             // 
             // panel1
             // 
@@ -284,6 +226,7 @@
             this.label1.Size = new System.Drawing.Size(151, 32);
             this.label1.TabIndex = 3;
             this.label1.Text = "Interviews";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button12
             // 
@@ -296,6 +239,20 @@
             this.button12.Text = "Go back";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // job_FairDataSet
+            // 
+            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
+            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // iNTERVIEWSBindingSource
+            // 
+            this.iNTERVIEWSBindingSource.DataMember = "INTERVIEWS";
+            this.iNTERVIEWSBindingSource.DataSource = this.job_FairDataSet;
+            // 
+            // iNTERVIEWSTableAdapter
+            // 
+            this.iNTERVIEWSTableAdapter.ClearBeforeFill = true;
             // 
             // Student_Interviews
             // 
@@ -310,9 +267,12 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Student_Interviews";
             this.Text = "Student_Interviews";
+            this.Load += new System.EventHandler(this.Student_Interviews_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iNTERVIEWSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,13 +294,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Company_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Event_Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeslot;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Event_Title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Recruiter_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Event_Location;
         private System.Windows.Forms.Button button12;
+        private Job_FairDataSet job_FairDataSet;
+        private System.Windows.Forms.BindingSource iNTERVIEWSBindingSource;
+        private Job_FairDataSetTableAdapters.INTERVIEWSTableAdapter iNTERVIEWSTableAdapter;
     }
 }

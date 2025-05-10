@@ -28,14 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.applied_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recruiter_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
@@ -49,9 +44,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
+            this.aPPLICATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aPPLICATIONTableAdapter = new WindowsFormsApp1.Job_FairDataSetTableAdapters.APPLICATIONTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aPPLICATIONBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -67,62 +67,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Title,
-            this.Company_name,
-            this.Salary,
-            this.status,
-            this.applied_date,
-            this.recruiter_name});
             this.dataGridView1.Location = new System.Drawing.Point(75, 63);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(628, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(629, 331);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // Title
-            // 
-            this.Title.HeaderText = "Job Title";
-            this.Title.MinimumWidth = 6;
-            this.Title.Name = "Title";
-            this.Title.Width = 75;
-            // 
-            // Company_name
-            // 
-            this.Company_name.HeaderText = "Company Name";
-            this.Company_name.MinimumWidth = 6;
-            this.Company_name.Name = "Company_name";
-            this.Company_name.Width = 75;
-            // 
-            // Salary
-            // 
-            this.Salary.HeaderText = "Salary Range";
-            this.Salary.MinimumWidth = 6;
-            this.Salary.Name = "Salary";
-            this.Salary.Width = 50;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Status";
-            this.status.MinimumWidth = 6;
-            this.status.Name = "status";
-            this.status.Width = 125;
-            // 
-            // applied_date
-            // 
-            this.applied_date.HeaderText = "applied_date";
-            this.applied_date.MinimumWidth = 6;
-            this.applied_date.Name = "applied_date";
-            this.applied_date.Width = 125;
-            // 
-            // recruiter_name
-            // 
-            this.recruiter_name.HeaderText = "Recruiter name";
-            this.recruiter_name.MinimumWidth = 6;
-            this.recruiter_name.Name = "recruiter_name";
-            this.recruiter_name.Width = 125;
             // 
             // label1
             // 
@@ -134,6 +85,7 @@
             this.label1.Size = new System.Drawing.Size(226, 32);
             this.label1.TabIndex = 3;
             this.label1.Text = "My applications";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -205,6 +157,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.Highlight;
             this.button6.Location = new System.Drawing.Point(17, 249);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
@@ -217,7 +170,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button5.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button5.Location = new System.Drawing.Point(17, 208);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
@@ -287,6 +240,20 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // job_FairDataSet
+            // 
+            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
+            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aPPLICATIONBindingSource
+            // 
+            this.aPPLICATIONBindingSource.DataMember = "APPLICATION";
+            this.aPPLICATIONBindingSource.DataSource = this.job_FairDataSet;
+            // 
+            // aPPLICATIONTableAdapter
+            // 
+            this.aPPLICATIONTableAdapter.ClearBeforeFill = true;
+            // 
             // Student_application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -300,9 +267,12 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Student_application";
             this.Text = "Student_application";
+            this.Load += new System.EventHandler(this.Student_application_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aPPLICATIONBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,12 +283,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Company_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Salary;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn applied_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recruiter_name;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
@@ -331,5 +295,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button12;
+        private Job_FairDataSet job_FairDataSet;
+        private System.Windows.Forms.BindingSource aPPLICATIONBindingSource;
+        private Job_FairDataSetTableAdapters.APPLICATIONTableAdapter aPPLICATIONTableAdapter;
     }
 }

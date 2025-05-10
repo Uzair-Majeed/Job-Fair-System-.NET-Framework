@@ -12,9 +12,30 @@ namespace WindowsFormsApp1
 {
     public partial class Coordinator_dashboard : Form
     {
+        private int userId;
+        private string userName;
+        private string email;
+        private string password;
+
         public Coordinator_dashboard()
         {
+
             InitializeComponent();
+        }
+        public Coordinator_dashboard(int user_id, string name, string em, string pass)
+        {
+
+            InitializeComponent();
+            this.userId = user_id;
+            this.userName = name;
+            this.email = em;
+            this.password = pass;
+
+
+            SessionData.UserId = userId;
+            SessionData.email = email;
+            SessionData.password = password;
+            SessionData.UserName = userName;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -24,7 +45,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Coordinator_profile profile = new Coordinator_profile();
+            Coordinator_profile profile = new Coordinator_profile(userId, userName, email, password);
             this.Hide();
             profile.Show();
         }

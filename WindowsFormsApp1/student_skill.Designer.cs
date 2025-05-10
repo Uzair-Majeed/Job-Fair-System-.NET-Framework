@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Skills = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -48,69 +46,78 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
+            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
+            this.sTUDENTSKILLSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sTUDENT_SKILLSTableAdapter = new WindowsFormsApp1.Job_FairDataSetTableAdapters.STUDENT_SKILLSTableAdapter();
+            this.sKILLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sKILLTableAdapter = new WindowsFormsApp1.Job_FairDataSetTableAdapters.SKILLTableAdapter();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.sKILLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.skill_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.skill_Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sKILLBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTSKILLSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sKILLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sKILLBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sKILLBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.button11);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.button12);
-            this.panel2.Controls.Add(this.button11);
             this.panel2.Location = new System.Drawing.Point(232, 100);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(756, 422);
+            this.panel2.Size = new System.Drawing.Size(792, 534);
             this.panel2.TabIndex = 5;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Skills});
-            this.dataGridView1.Location = new System.Drawing.Point(27, 149);
+            this.skill_Name,
+            this.skill_Level});
+            this.dataGridView1.DataSource = this.sKILLBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(27, 203);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(713, 246);
+            this.dataGridView1.Size = new System.Drawing.Size(722, 309);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Skills
-            // 
-            this.Skills.HeaderText = "Your Skills";
-            this.Skills.MinimumWidth = 6;
-            this.Skills.Name = "Skills";
-            this.Skills.Width = 125;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(48, 34);
+            this.label2.Location = new System.Drawing.Point(75, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Add a skill";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(209, 34);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(502, 28);
-            this.comboBox1.TabIndex = 0;
-            // 
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(209, 90);
+            this.button12.Location = new System.Drawing.Point(530, 29);
             this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(242, 36);
@@ -118,18 +125,6 @@
             this.button12.Text = "Add Skill";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button11
-            // 
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(458, 90);
-            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(254, 36);
-            this.button11.TabIndex = 0;
-            this.button11.Text = "Create a new skill";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // panel1
             // 
@@ -147,7 +142,7 @@
             this.panel1.Location = new System.Drawing.Point(1, 54);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 468);
+            this.panel1.Size = new System.Drawing.Size(200, 580);
             this.panel1.TabIndex = 4;
             // 
             // button10
@@ -295,12 +290,110 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
+            // job_FairDataSet
+            // 
+            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
+            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sTUDENTSKILLSBindingSource
+            // 
+            this.sTUDENTSKILLSBindingSource.DataMember = "STUDENT_SKILLS";
+            this.sTUDENTSKILLSBindingSource.DataSource = this.job_FairDataSet;
+            // 
+            // sTUDENT_SKILLSTableAdapter
+            // 
+            this.sTUDENT_SKILLSTableAdapter.ClearBeforeFill = true;
+            // 
+            // sKILLBindingSource
+            // 
+            this.sKILLBindingSource.DataMember = "SKILL";
+            this.sKILLBindingSource.DataSource = this.job_FairDataSet;
+            // 
+            // sKILLTableAdapter
+            // 
+            this.sKILLTableAdapter.ClearBeforeFill = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(22, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(164, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Create new skill";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(203, 100);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(305, 26);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button11
+            // 
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(530, 90);
+            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(242, 36);
+            this.button11.TabIndex = 5;
+            this.button11.Text = "Create new Skill";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click_1);
+            // 
+            // sKILLBindingSource1
+            // 
+            this.sKILLBindingSource1.DataMember = "SKILL";
+            this.sKILLBindingSource1.DataSource = this.job_FairDataSet;
+            // 
+            // skill_Name
+            // 
+            this.skill_Name.DataPropertyName = "skill_Name";
+            this.skill_Name.HeaderText = "skill_Name";
+            this.skill_Name.MinimumWidth = 8;
+            this.skill_Name.Name = "skill_Name";
+            this.skill_Name.Width = 150;
+            // 
+            // skill_Level
+            // 
+            this.skill_Level.DataPropertyName = "skill_Level";
+            this.skill_Level.HeaderText = "skill_Level";
+            this.skill_Level.MinimumWidth = 8;
+            this.skill_Level.Name = "skill_Level";
+            this.skill_Level.Width = 150;
+            // 
+            // sKILLBindingSource2
+            // 
+            this.sKILLBindingSource2.DataMember = "SKILL";
+            this.sKILLBindingSource2.DataSource = this.job_FairDataSet;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(203, 36);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(305, 28);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(22, 166);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 25);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Your Skills";
+            // 
             // student_skill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(998, 562);
+            this.ClientSize = new System.Drawing.Size(1073, 645);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -313,6 +406,11 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTSKILLSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sKILLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sKILLBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sKILLBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,11 +432,22 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Skills;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
+        private Job_FairDataSet job_FairDataSet;
+        private System.Windows.Forms.BindingSource sTUDENTSKILLSBindingSource;
+        private Job_FairDataSetTableAdapters.STUDENT_SKILLSTableAdapter sTUDENT_SKILLSTableAdapter;
+        private System.Windows.Forms.BindingSource sKILLBindingSource;
+        private Job_FairDataSetTableAdapters.SKILLTableAdapter sKILLTableAdapter;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.BindingSource sKILLBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn skill_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn skill_Level;
+        private System.Windows.Forms.BindingSource sKILLBindingSource2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label4;
     }
 }
