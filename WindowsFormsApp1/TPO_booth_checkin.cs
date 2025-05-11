@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -57,6 +58,28 @@ namespace WindowsFormsApp1
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
+        }
+        private void loadTPOBOOTH() {
+            using (SqlConnection con = new SqlConnection(SessionData.ijtabastring))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(
+                    @"select bc.booth_ID[booth #],JFE.title[Event Name],u.Name[Coordinator Name],bt.booth_Traffic[Traffic] from BOOTH_CHECKIN bc join JOB_FAIR_EVENTS JFE on bc.eventID=JFE.eventID join BOOTH_TRACKING BT on bt.booth_ID=bc.booth_ID join users u on bt.coordinator_ID=u.user_ID
+order by bt.booth_Traffic desc", con); // Adjust fields/table names
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+            }
+        }
+        private void TPO_booth_checkin_Load(object sender, EventArgs e)
+        {
+
+            loadTPOBOOTH();
+            // TODO: This line of code loads data into the 'job_FairDataSet1.BOOTH_CHECKIN' table. You can move, or remove it, as needed.
+            //this.bOOTH_CHECKINTableAdapter.Fill(this.job_FairDataSet1.BOOTH_CHECKIN);
+
         }
     }
 }
