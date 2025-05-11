@@ -91,6 +91,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Job_FairDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Job_FairDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Job_FairDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="manage_jobfairs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +336,17 @@
     </None>
     <None Include="Job_FairDataSet.xss">
       <DependentUpon>Job_FairDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Job_FairDataSet1.xsc">
+      <DependentUpon>Job_FairDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Job_FairDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Job_FairDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Job_FairDataSet1.xss">
+      <DependentUpon>Job_FairDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
