@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -57,6 +58,26 @@ namespace WindowsFormsApp1
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
+        }
+        private void loadtablequery() {
+            using (SqlConnection con = new SqlConnection(SessionData.ijtabastring))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(
+                    @"select bt.booth_ID[Booth #],u.Name[Coordinator name],bt.booth_Traffic[Booth traffic]   from BOOTH_TRACKING bt join users u on bt.coordinator_ID=u.user_ID", con); // Adjust fields/table names
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+            }
+
+        }
+        private void boothTraffic_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'job_FairDataSet1.BOOTH_TRACKING' table. You can move, or remove it, as needed.
+            // this.bOOTH_TRACKINGTableAdapter.Fill(this.job_FairDataSet1.BOOTH_TRACKING);
+            loadtablequery();
         }
     }
 }
