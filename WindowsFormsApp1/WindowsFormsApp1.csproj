@@ -97,6 +97,12 @@
     <Compile Include="manage_jobfairs.Designer.cs">
       <DependentUpon>manage_jobfairs.cs</DependentUpon>
     </Compile>
+    <Compile Include="recruiter_interview2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recruiter_interview2.Designer.cs">
+      <DependentUpon>recruiter_interview2.cs</DependentUpon>
+    </Compile>
     <Compile Include="recruiter_profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,9 @@
     </Compile>
     <EmbeddedResource Include="recruiter_dashboard.resx">
       <DependentUpon>recruiter_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="recruiter_interview2.resx">
+      <DependentUpon>recruiter_interview2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="recruiter_interviews.resx">
       <DependentUpon>recruiter_interviews.cs</DependentUpon>

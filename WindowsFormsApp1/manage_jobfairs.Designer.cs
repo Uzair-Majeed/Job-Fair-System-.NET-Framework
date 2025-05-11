@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -48,13 +49,20 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BoothNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Student = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CheckInTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
+            this.jOBFAIREVENTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.jOB_FAIR_EVENTSTableAdapter = new WindowsFormsApp1.Job_FairDataSetTableAdapters.JOB_FAIR_EVENTSTableAdapter();
+            this.eventIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.venuelocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.schedulerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jOBFAIREVENTSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -213,6 +221,7 @@
             this.button6.TabIndex = 21;
             this.button6.Text = "Schedule Event";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox2
             // 
@@ -220,6 +229,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(331, 26);
             this.textBox2.TabIndex = 26;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label4
             // 
@@ -259,47 +269,86 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BoothNumber,
-            this.Student,
-            this.CheckInTime,
-            this.Staff});
+            this.eventIDDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.venuelocationDataGridViewTextBoxColumn,
+            this.staffDataGridViewTextBoxColumn,
+            this.schedulerIDDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.jOBFAIREVENTSBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(380, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(664, 514);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // BoothNumber
+            // job_FairDataSet
             // 
-            this.BoothNumber.HeaderText = "Event Title";
-            this.BoothNumber.MinimumWidth = 8;
-            this.BoothNumber.Name = "BoothNumber";
-            this.BoothNumber.Width = 150;
+            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
+            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Student
+            // jOBFAIREVENTSBindingSource
             // 
-            this.Student.HeaderText = "Date";
-            this.Student.MinimumWidth = 8;
-            this.Student.Name = "Student";
-            this.Student.Width = 150;
+            this.jOBFAIREVENTSBindingSource.DataMember = "JOB_FAIR_EVENTS";
+            this.jOBFAIREVENTSBindingSource.DataSource = this.job_FairDataSet;
             // 
-            // CheckInTime
+            // jOB_FAIR_EVENTSTableAdapter
             // 
-            this.CheckInTime.HeaderText = "Venue";
-            this.CheckInTime.MinimumWidth = 8;
-            this.CheckInTime.Name = "CheckInTime";
-            this.CheckInTime.Width = 150;
+            this.jOB_FAIR_EVENTSTableAdapter.ClearBeforeFill = true;
             // 
-            // Staff
+            // eventIDDataGridViewTextBoxColumn
             // 
-            this.Staff.HeaderText = "Staff";
-            this.Staff.MinimumWidth = 8;
-            this.Staff.Name = "Staff";
-            this.Staff.Width = 150;
+            this.eventIDDataGridViewTextBoxColumn.DataPropertyName = "eventID";
+            this.eventIDDataGridViewTextBoxColumn.HeaderText = "eventID";
+            this.eventIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.eventIDDataGridViewTextBoxColumn.Name = "eventIDDataGridViewTextBoxColumn";
+            this.eventIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "title";
+            this.titleDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // venuelocationDataGridViewTextBoxColumn
+            // 
+            this.venuelocationDataGridViewTextBoxColumn.DataPropertyName = "venue_location";
+            this.venuelocationDataGridViewTextBoxColumn.HeaderText = "venue_location";
+            this.venuelocationDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.venuelocationDataGridViewTextBoxColumn.Name = "venuelocationDataGridViewTextBoxColumn";
+            this.venuelocationDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // staffDataGridViewTextBoxColumn
+            // 
+            this.staffDataGridViewTextBoxColumn.DataPropertyName = "staff";
+            this.staffDataGridViewTextBoxColumn.HeaderText = "staff";
+            this.staffDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.staffDataGridViewTextBoxColumn.Name = "staffDataGridViewTextBoxColumn";
+            this.staffDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // schedulerIDDataGridViewTextBoxColumn
+            // 
+            this.schedulerIDDataGridViewTextBoxColumn.DataPropertyName = "Scheduler_ID";
+            this.schedulerIDDataGridViewTextBoxColumn.HeaderText = "Scheduler_ID";
+            this.schedulerIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.schedulerIDDataGridViewTextBoxColumn.Name = "schedulerIDDataGridViewTextBoxColumn";
+            this.schedulerIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // manage_jobfairs
             // 
@@ -313,10 +362,13 @@
             this.Controls.Add(this.panel1);
             this.Name = "manage_jobfairs";
             this.Text = "manage_jobfairs";
+            this.Load += new System.EventHandler(this.manage_jobfairs_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jOBFAIREVENTSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,13 +392,18 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BoothNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Student;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CheckInTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Staff;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private Job_FairDataSet job_FairDataSet;
+        private System.Windows.Forms.BindingSource jOBFAIREVENTSBindingSource;
+        private Job_FairDataSetTableAdapters.JOB_FAIR_EVENTSTableAdapter jOB_FAIR_EVENTSTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eventIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn venuelocationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn schedulerIDDataGridViewTextBoxColumn;
     }
 }

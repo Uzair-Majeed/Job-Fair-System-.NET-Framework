@@ -58,5 +58,32 @@ namespace WindowsFormsApp1
             form1.Show();
             this.Hide();
         }
+
+        private void manage_jobfairs_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'job_FairDataSet.JOB_FAIR_EVENTS' table. You can move, or remove it, as needed.
+            this.jOB_FAIR_EVENTSTableAdapter.Fill(this.job_FairDataSet.JOB_FAIR_EVENTS);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            string eventname = textBox2.Text;
+            DateTime date = dateTimePicker1.Value;
+            string location = textBox1.Text;
+
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
