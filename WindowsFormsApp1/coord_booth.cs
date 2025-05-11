@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -62,6 +63,27 @@ namespace WindowsFormsApp1
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
+        }
+        private void loadtablequery()
+        {
+            using (SqlConnection con = new SqlConnection(SessionData.ijtabastring))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(
+                    @"select b.booth_ID[Booth #],JFE.title[Event name],u.Name[Coordinator name],b.location [Location] from BOOTH B join JOB_FAIR_EVENTS JFE on b.eventID=JFE.eventID join BOOTH_TRACKING BFR on b.booth_ID=bfr.booth_ID join users u on BFR.coordinator_ID=u.user_ID ", con); // Adjust fields/table names
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+            }
+
+        }
+        private void coord_booth_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'job_FairDataSet1.ACADEMIC_RECORD' table. You can move, or remove it, as needed.
+            //this.aCADEMIC_RECORDTableAdapter.Fill(this.job_FairDataSet1.ACADEMIC_RECORD);
+            loadtablequery();
         }
     }
 }

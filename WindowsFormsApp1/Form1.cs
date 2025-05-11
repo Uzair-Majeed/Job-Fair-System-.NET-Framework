@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         public static string email;
         public static string password;
         public static string companyName;
+        public static string ijtabastring= "Data Source=IJTABAS-IDEAPAD\\SQLEXPRESS;Initial Catalog=Job_Fair;Integrated Security=True";
     }
     public partial class Form1 : Form
     {
@@ -41,7 +42,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MHBH552\\SQLEXPRESS;Initial Catalog=Job_Fair;Integrated Security=True"); //Connection String
+            SqlConnection conn = new SqlConnection(SessionData.ijtabastring); //Connection String
             conn.Open();
             MessageBox.Show("Connection Open");
             string em = textBox1.Text;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -59,30 +60,91 @@ namespace WindowsFormsApp1
             this.Hide();
         }
 
-        private void manage_jobfairs_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'job_FairDataSet.JOB_FAIR_EVENTS' table. You can move, or remove it, as needed.
-            this.jOB_FAIR_EVENTSTableAdapter.Fill(this.job_FairDataSet.JOB_FAIR_EVENTS);
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
-
-            string eventname = textBox2.Text;
+            // Read input values
+            string eventName = textBox2.Text;
             DateTime date = dateTimePicker1.Value;
-            string location = textBox1.Text;
+            string venue = textBox1.Text;
+            string staff = textBox3.Text;
+            int userid = SessionData.UserId;
 
+            // Connection string
+            string connectionString = SessionData.ijtabastring;
 
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Step 1: Get max EventID
+                    int newEventID = 1; // default if table is empty
+                    string getMaxIdQuery = "SELECT ISNULL(MAX(EventID), 0) + 1 FROM Job_Fair_Events";
+                    using (SqlCommand getMaxCmd = new SqlCommand(getMaxIdQuery, conn))
+                    {
+                        newEventID = (int)getMaxCmd.ExecuteScalar();
+                    }
+
+                    // Step 2: Insert new record
+                    string query = "INSERT INTO Job_Fair_Events (EventID, title, Date, venue_location, Staff, scheduler_id) " +
+                                   "VALUES (@EventID, @EventTitle, @Date, @Venue, @Staff, @userid)";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@EventID", newEventID);
+                        cmd.Parameters.AddWithValue("@EventTitle", eventName);
+                        cmd.Parameters.AddWithValue("@Date", date);
+                        cmd.Parameters.AddWithValue("@Venue", venue);
+                        cmd.Parameters.AddWithValue("@Staff", staff);
+                        cmd.Parameters.AddWithValue("@userid", userid);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Event scheduled successfully!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to schedule event.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+            manage_jobfairs_Load(sender, e);
         }
+
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manage_jobfairs_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'job_FairDataSet1.JOB_FAIR_EVENTS' table. You can move, or remove it, as needed.
+            this.jOB_FAIR_EVENTSTableAdapter1.Fill(this.job_FairDataSet1.JOB_FAIR_EVENTS);
+  
 
         }
     }
