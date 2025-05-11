@@ -308,37 +308,6 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(590, 411);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // job_FairDataSet
-            // 
-            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
-            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // jOBFAIREVENTSBindingSource
-            // 
-            this.jOBFAIREVENTSBindingSource.DataMember = "JOB_FAIR_EVENTS";
-            this.jOBFAIREVENTSBindingSource.DataSource = this.job_FairDataSet;
-            // 
-            // jOB_FAIR_EVENTSTableAdapter
-            // 
-            this.jOB_FAIR_EVENTSTableAdapter.ClearBeforeFill = true;
-            // 
-            // eventIDDataGridViewTextBoxColumn
-            // 
-            this.eventIDDataGridViewTextBoxColumn.DataPropertyName = "eventID";
-            this.eventIDDataGridViewTextBoxColumn.HeaderText = "eventID";
-            this.eventIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.eventIDDataGridViewTextBoxColumn.Name = "eventIDDataGridViewTextBoxColumn";
-            this.eventIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "title";
-            this.titleDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.Width = 150;
             // 
             // jobFairDataSetBindingSource
             // 
@@ -461,5 +430,17 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.BindingSource jobFairDataSetBindingSource;
+        private Job_FairDataSet job_FairDataSet;
+        private System.Windows.Forms.BindingSource jOBFAIREVENTSBindingSource;
+        private Job_FairDataSetTableAdapters.JOB_FAIR_EVENTSTableAdapter jOB_FAIR_EVENTSTableAdapter;
+        private System.Windows.Forms.BindingSource jobFairDataSet1BindingSource;
+        private Job_FairDataSet1 job_FairDataSet1;
+        private System.Windows.Forms.BindingSource jOBFAIREVENTSBindingSource1;
+        private Job_FairDataSet1TableAdapters.JOB_FAIR_EVENTSTableAdapter jOB_FAIR_EVENTSTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn venuelocationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffDataGridViewTextBoxColumn;
     }
 }
