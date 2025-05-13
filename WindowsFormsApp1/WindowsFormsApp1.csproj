@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +36,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,17 +67,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acceptRatio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acceptRatio.Designer.cs">
+      <DependentUpon>acceptRatio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="approve_reject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="approve_reject.Designer.cs">
+      <DependentUpon>approve_reject.cs</DependentUpon>
+    </Compile>
     <Compile Include="assign_booths.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="assign_booths.Designer.cs">
       <DependentUpon>assign_booths.cs</DependentUpon>
     </Compile>
+    <Compile Include="avg_sal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="avg_sal.Designer.cs">
+      <DependentUpon>avg_sal.cs</DependentUpon>
+    </Compile>
     <Compile Include="boothTraffic.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="boothTraffic.Designer.cs">
       <DependentUpon>boothTraffic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="booth_traff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="booth_traff.Designer.cs">
+      <DependentUpon>booth_traff.cs</DependentUpon>
     </Compile>
     <Compile Include="Coordinator_dashboard.cs">
       <SubType>Form</SubType>
@@ -82,9 +127,30 @@
     <Compile Include="coord_booth.Designer.cs">
       <DependentUpon>coord_booth.cs</DependentUpon>
     </Compile>
+    <Compile Include="dep_count.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dep_count.Designer.cs">
+      <DependentUpon>dep_count.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs" />
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GPA_distribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GPA_distribution.Designer.cs">
+      <DependentUpon>GPA_distribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hiring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hiring.Designer.cs">
+      <DependentUpon>Hiring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Job_FairDataSet.cs">
+      <DependentUpon>Job_FairDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Job_FairDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -96,11 +162,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Job_FairDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="manage_companies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manage_companies.Designer.cs">
+      <DependentUpon>manage_companies.cs</DependentUpon>
+    </Compile>
     <Compile Include="manage_jobfairs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="manage_jobfairs.Designer.cs">
       <DependentUpon>manage_jobfairs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modify.Designer.cs">
+      <DependentUpon>modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="overall_placements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="overall_placements.Designer.cs">
+      <DependentUpon>overall_placements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="peak_hours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="peak_hours.Designer.cs">
+      <DependentUpon>peak_hours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="placement_per_dep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="placement_per_dep.Designer.cs">
+      <DependentUpon>placement_per_dep.cs</DependentUpon>
     </Compile>
     <Compile Include="recruiter_interview2.cs">
       <SubType>Form</SubType>
@@ -113,6 +209,18 @@
     </Compile>
     <Compile Include="recruiter_profile.Designer.cs">
       <DependentUpon>recruiter_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT_Interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT_Interface.Designer.cs">
+      <DependentUpon>REPORT_Interface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="resource_usage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resource_usage.Designer.cs">
+      <DependentUpon>resource_usage.cs</DependentUpon>
     </Compile>
     <Compile Include="Student_academic_info.cs">
       <SubType>Form</SubType>
@@ -206,6 +314,12 @@
     <Compile Include="Student_profile.Designer.cs">
       <DependentUpon>Student_profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="student_ratings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student_ratings.Designer.cs">
+      <DependentUpon>student_ratings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student_Reviews.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +331,18 @@
     </Compile>
     <Compile Include="student_skill.Designer.cs">
       <DependentUpon>student_skill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="top_skills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="top_skills.Designer.cs">
+      <DependentUpon>top_skills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="total_interviews_per_company.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="total_interviews_per_company.Designer.cs">
+      <DependentUpon>total_interviews_per_company.cs</DependentUpon>
     </Compile>
     <Compile Include="TPO_booth_checkin.cs">
       <SubType>Form</SubType>
@@ -236,11 +362,32 @@
     <Compile Include="Tpo_Profile.Designer.cs">
       <DependentUpon>Tpo_Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Manage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Manage.Designer.cs">
+      <DependentUpon>User_Manage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="acceptRatio.rdlc" />
+    <EmbeddedResource Include="acceptRatio.resx">
+      <DependentUpon>acceptRatio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="approve_reject.resx">
+      <DependentUpon>approve_reject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="assign_booths.resx">
       <DependentUpon>assign_booths.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="avg_sal.rdlc" />
+    <EmbeddedResource Include="avg_sal.resx">
+      <DependentUpon>avg_sal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="boothTraffic.resx">
       <DependentUpon>boothTraffic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="booth_traff.rdlc" />
+    <EmbeddedResource Include="booth_traff.resx">
+      <DependentUpon>booth_traff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Coordinator_dashboard.resx">
       <DependentUpon>Coordinator_dashboard.cs</DependentUpon>
@@ -254,11 +401,40 @@
     <EmbeddedResource Include="coord_booth.resx">
       <DependentUpon>coord_booth.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dep_count.rdlc" />
+    <EmbeddedResource Include="dep_count.resx">
+      <DependentUpon>dep_count.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GPA_distribution.resx">
+      <DependentUpon>GPA_distribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GPA_distribution_report.rdlc" />
+    <EmbeddedResource Include="Hiring.resx">
+      <DependentUpon>Hiring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manage_companies.resx">
+      <DependentUpon>manage_companies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="manage_jobfairs.resx">
       <DependentUpon>manage_jobfairs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modify.resx">
+      <DependentUpon>modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="overall_placements.rdlc" />
+    <EmbeddedResource Include="overall_placements.resx">
+      <DependentUpon>overall_placements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="peak_hours.rdlc" />
+    <EmbeddedResource Include="peak_hours.resx">
+      <DependentUpon>peak_hours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="placement_per_dep.rdlc" />
+    <EmbeddedResource Include="placement_per_dep.resx">
+      <DependentUpon>placement_per_dep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Post_Job.resx">
       <DependentUpon>Post_Job.cs</DependentUpon>
@@ -286,6 +462,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="recruiter_profile.resx">
       <DependentUpon>recruiter_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="REPORT_Interface.resx">
+      <DependentUpon>REPORT_Interface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resource_usage.rdlc" />
+    <EmbeddedResource Include="resource_usage.resx">
+      <DependentUpon>resource_usage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReviewApplication2.resx">
       <DependentUpon>ReviewApplication2.cs</DependentUpon>
@@ -320,11 +504,23 @@
     <EmbeddedResource Include="Student_profile.resx">
       <DependentUpon>Student_profile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="student_ratings.rdlc" />
+    <EmbeddedResource Include="student_ratings.resx">
+      <DependentUpon>student_ratings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student_Reviews.resx">
       <DependentUpon>Student_Reviews.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="student_skill.resx">
       <DependentUpon>student_skill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="top_skills.rdlc" />
+    <EmbeddedResource Include="top_skills.resx">
+      <DependentUpon>top_skills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="total_interviews_per_company.rdlc" />
+    <EmbeddedResource Include="total_interviews_per_company.resx">
+      <DependentUpon>total_interviews_per_company.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TPO_booth_checkin.resx">
       <DependentUpon>TPO_booth_checkin.cs</DependentUpon>
@@ -334,6 +530,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tpo_Profile.resx">
       <DependentUpon>Tpo_Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Manage.resx">
+      <DependentUpon>User_Manage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Job_FairDataSet.xsc">
       <DependentUpon>Job_FairDataSet.xsd</DependentUpon>
@@ -357,6 +556,7 @@
     <None Include="Job_FairDataSet1.xss">
       <DependentUpon>Job_FairDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -371,4 +571,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
 </Project>

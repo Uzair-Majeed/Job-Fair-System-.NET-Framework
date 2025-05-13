@@ -36,6 +36,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +56,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
@@ -67,7 +71,7 @@
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(17, 248);
+            this.button10.Location = new System.Drawing.Point(17, 416);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(165, 36);
             this.button10.TabIndex = 9;
@@ -78,7 +82,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(17, 202);
+            this.button4.Location = new System.Drawing.Point(17, 309);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(165, 36);
             this.button4.TabIndex = 3;
@@ -89,7 +93,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(17, 123);
+            this.button3.Location = new System.Drawing.Point(17, 221);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(165, 73);
             this.button3.TabIndex = 2;
@@ -100,7 +104,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(17, 81);
+            this.button2.Location = new System.Drawing.Point(17, 170);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(165, 36);
             this.button2.TabIndex = 1;
@@ -111,7 +115,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(17, 39);
+            this.button1.Location = new System.Drawing.Point(17, 29);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 36);
             this.button1.TabIndex = 0;
@@ -126,6 +130,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(756, 422);
             this.panel2.TabIndex = 3;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(17, 362);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(165, 36);
+            this.button5.TabIndex = 10;
+            this.button5.Text = "Finalize Hiring";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(17, 71);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(165, 80);
+            this.button6.TabIndex = 11;
+            this.button6.Text = "Manage Companies";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // recruiter_dashboard
             // 
@@ -154,5 +180,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

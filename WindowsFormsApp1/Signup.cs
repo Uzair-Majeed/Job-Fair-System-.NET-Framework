@@ -47,11 +47,11 @@ namespace WindowsFormsApp1
             string email = textBox2.Text;
             string pass = textBox3.Text;
             string role = comboBox1.Text;
+            string company = comboBox2.Text;
 
             string query1 = "SELECT MAX(user_ID) FROM USERS";
             SqlCommand cm = new SqlCommand(query1, conn);
-            object result = cm.ExecuteScalar();
-            int user_id = (result != DBNull.Value) ? Convert.ToInt32(result) + 1 : 1;
+            object user_id = (int)cm.ExecuteScalar() + 1;
             cm.Dispose();
 
             string query2 = "INSERT INTO USERS(user_id, password, role, name) VALUES (@userId, @password, @role, @name)";
@@ -65,19 +65,31 @@ namespace WindowsFormsApp1
 
             if (role == "Student")
             {
-                string query3 = "INSERT INTO Student(student_id) VALUES (@user_id)";
+                string query3 = "INSERT INTO Student(student_id, isApproved) VALUES (@user_id, 0)";
                 SqlCommand cm3 = new SqlCommand(query3, conn);
                 cm3.Parameters.AddWithValue("@user_id", user_id);
                 cm3.ExecuteNonQuery();
                 cm3.Dispose();
+
+                MessageBox.Show("Your Registration req has been sent to admin!");
             }
             else if (role == "Recruiter")
             {
-                string query3 = "INSERT INTO Recruiter(recruiter_id, company_ID) VALUES (@user_id, NULL)";
+                string query6 = "SELECT company_ID FROM COMPANY WHERE name = @company";
+                SqlCommand cm6 = new SqlCommand(query6, conn);
+                cm6.Parameters.AddWithValue("@company", company);
+                int company_id = (int)cm6.ExecuteScalar();
+                cm6.Dispose();
+
+                string query3 = "INSERT INTO Recruiter(recruiter_id, company_ID,isApproved) VALUES (@user_id, @company_id,0)";
                 SqlCommand cm3 = new SqlCommand(query3, conn);
                 cm3.Parameters.AddWithValue("@user_id", user_id);
+                cm3.Parameters.AddWithValue("@company_id", company_id);
                 cm3.ExecuteNonQuery();
                 cm3.Dispose();
+
+                MessageBox.Show("Your Registration req has been sent to admin!");
+
             }
             else if (role == "TPO")
             {
@@ -86,6 +98,8 @@ namespace WindowsFormsApp1
                 cm3.Parameters.AddWithValue("@user_id", user_id);
                 cm3.ExecuteNonQuery();
                 cm3.Dispose();
+
+                MessageBox.Show("SIGNUP SUCCESSFUL!");
             }
             else
             {
@@ -94,6 +108,8 @@ namespace WindowsFormsApp1
                 cm3.Parameters.AddWithValue("@user_id", user_id);
                 cm3.ExecuteNonQuery();
                 cm3.Dispose();
+
+                MessageBox.Show("SIGNUP SUCCESSFUL!");
             }
 
             string query4 = "INSERT INTO USER_Email(email, user_id) VALUES (@email, @user_id)";
@@ -104,7 +120,6 @@ namespace WindowsFormsApp1
             cm4.Dispose();
 
             conn.Close();
-            MessageBox.Show("SIGNUP SUCCESSFUL!");
 
 
         }
@@ -135,6 +150,18 @@ namespace WindowsFormsApp1
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Signup_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'job_FairDataSet.COMPANY' table. You can move, or remove it, as needed.
+            this.cOMPANYTableAdapter.Fill(this.job_FairDataSet.COMPANY);
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

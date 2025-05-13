@@ -30,7 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cERTIFICATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -44,25 +53,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
-            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
-            this.cERTIFICATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cERTIFICATIONTableAdapter = new WindowsFormsApp1.Job_FairDataSetTableAdapters.CERTIFICATIONTableAdapter();
-            this.organizationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.certifieddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.organizationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button11 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cERTIFICATIONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -83,6 +83,77 @@
             this.panel2.Size = new System.Drawing.Size(948, 436);
             this.panel2.TabIndex = 5;
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(136, 381);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(105, 42);
+            this.button11.TabIndex = 19;
+            this.button11.Text = "Add";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(25, 285);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(202, 32);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Certified Date";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(31, 229);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(326, 26);
+            this.textBox2.TabIndex = 16;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(25, 182);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 32);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Title";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(25, 96);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(189, 32);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Organization";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(101, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(256, 32);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Add Certifications";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(31, 145);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(326, 26);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -100,6 +171,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(501, 409);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // cERTIFICATIONBindingSource
+            // 
+            this.cERTIFICATIONBindingSource.DataMember = "CERTIFICATION";
+            this.cERTIFICATIONBindingSource.DataSource = this.job_FairDataSet;
+            // 
+            // job_FairDataSet
+            // 
+            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
+            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -265,35 +346,9 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // job_FairDataSet
-            // 
-            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
-            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cERTIFICATIONBindingSource
-            // 
-            this.cERTIFICATIONBindingSource.DataMember = "CERTIFICATION";
-            this.cERTIFICATIONBindingSource.DataSource = this.job_FairDataSet;
-            // 
             // cERTIFICATIONTableAdapter
             // 
             this.cERTIFICATIONTableAdapter.ClearBeforeFill = true;
-            // 
-            // organizationDataGridViewTextBoxColumn
-            // 
-            this.organizationDataGridViewTextBoxColumn.DataPropertyName = "Organization";
-            this.organizationDataGridViewTextBoxColumn.HeaderText = "Organization";
-            this.organizationDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.organizationDataGridViewTextBoxColumn.Name = "organizationDataGridViewTextBoxColumn";
-            this.organizationDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.Width = 150;
             // 
             // certifieddateDataGridViewTextBoxColumn
             // 
@@ -303,66 +358,21 @@
             this.certifieddateDataGridViewTextBoxColumn.Name = "certifieddateDataGridViewTextBoxColumn";
             this.certifieddateDataGridViewTextBoxColumn.Width = 150;
             // 
-            // textBox1
+            // titleDataGridViewTextBoxColumn
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 145);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(326, 26);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.Width = 150;
             // 
-            // label2
+            // organizationDataGridViewTextBoxColumn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(101, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(256, 32);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Add Certifications";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(25, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(189, 32);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Organization";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(25, 182);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 32);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Title";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(31, 229);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(326, 26);
-            this.textBox2.TabIndex = 16;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(25, 285);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(202, 32);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Certified Date";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.organizationDataGridViewTextBoxColumn.DataPropertyName = "Organization";
+            this.organizationDataGridViewTextBoxColumn.HeaderText = "Organization";
+            this.organizationDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.organizationDataGridViewTextBoxColumn.Name = "organizationDataGridViewTextBoxColumn";
+            this.organizationDataGridViewTextBoxColumn.Width = 150;
             // 
             // dateTimePicker1
             // 
@@ -371,16 +381,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(326, 26);
             this.dateTimePicker1.TabIndex = 18;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(136, 381);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(105, 42);
-            this.button11.TabIndex = 19;
-            this.button11.Text = "Add";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // Student_certifications
             // 
@@ -399,9 +399,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cERTIFICATIONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.job_FairDataSet)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,10 +427,6 @@
         private Job_FairDataSet job_FairDataSet;
         private System.Windows.Forms.BindingSource cERTIFICATIONBindingSource;
         private Job_FairDataSetTableAdapters.CERTIFICATIONTableAdapter cERTIFICATIONTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn organizationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn certifieddateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
@@ -438,5 +434,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn organizationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn certifieddateDataGridViewTextBoxColumn;
     }
 }

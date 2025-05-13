@@ -188,5 +188,19 @@ namespace WindowsFormsApp1
         {
             companyName = comboBox1.Text;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            manage_companies manage_Companies = new manage_companies();
+            this.Hide();
+            manage_Companies.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Hiring hiring = new Hiring();
+            this.Hide();
+            hiring.Show();
+        }
     }
 }

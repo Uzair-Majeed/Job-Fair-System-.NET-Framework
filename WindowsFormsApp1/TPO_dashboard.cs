@@ -70,12 +70,47 @@ namespace WindowsFormsApp1
         {
             Form1 form1 = new Form1();
             form1.Show();
-            form1.Close();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            REPORT_Interface rEPORT_Interface = new REPORT_Interface();
+            rEPORT_Interface.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            GPA_distribution gPA_Distribution = new GPA_distribution();
+            gPA_Distribution.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            top_skills top_Skills = new top_skills();
+            top_Skills.Show();
+            this.Hide();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            approve_reject approve_Reject = new approve_reject();
+            approve_Reject.Show();
+            this.Hide();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            User_Manage user_Manage = new User_Manage();
+            user_Manage.Show();
+            this.Hide();
         }
     }
 }

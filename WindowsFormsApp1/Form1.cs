@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
         public static string email;
         public static string password;
         public static string companyName;
-        public static string ijtabastring= "Data Source=IJTABAS-IDEAPAD\\SQLEXPRESS;Initial Catalog=Job_Fair;Integrated Security=True";
+        public static string ijtabastring= "Data Source=DESKTOP-MHBH552\\SQLEXPRESS;Initial Catalog=Job_Fair;Integrated Security=True;Encrypt=False";
     }
     public partial class Form1 : Form
     {
@@ -54,11 +54,10 @@ namespace WindowsFormsApp1
             cm.Parameters.AddWithValue("@email", em);
             cm.Parameters.AddWithValue("@password", pass);
 
-            int result = (int)cm.ExecuteScalar(); // Get the count result
+            int result = (int)cm.ExecuteScalar(); 
 
             if (result > 0)
             {
-                MessageBox.Show("Login Successful!");
 
                 
 
@@ -85,6 +84,36 @@ namespace WindowsFormsApp1
                 cm4.Parameters.AddWithValue("@password", pass);
 
                 string name = (string)cm4.ExecuteScalar();
+
+                string approvalQuery = "";
+                if (role == "Student")
+                    approvalQuery = "SELECT isApproved FROM STUDENT WHERE student_ID = @user_id";
+                else if (role == "Recruiter")
+                    approvalQuery = "SELECT isApproved FROM RECRUITER WHERE recruiter_ID = @user_id";
+
+                if (role == "Student" || role == "Recruiter")
+                {
+                    SqlCommand cm5 = new SqlCommand(approvalQuery, conn);
+                    cm5.Parameters.AddWithValue("@user_id", user_id);
+                    object isApprovedResult = cm5.ExecuteScalar();
+
+                    if (isApprovedResult == null)
+                    {
+                        MessageBox.Show("Your registration request was rejected.");
+                        conn.Close();
+                        return;
+                    }
+                    else if (Convert.ToInt32(isApprovedResult) == 0)
+                    {
+                        MessageBox.Show("Your account is still pending approval.");
+                        conn.Close();
+                        return;
+                    }
+
+                }
+
+
+                MessageBox.Show("Login Successful!");
 
                 if (role == "Student")
                 {

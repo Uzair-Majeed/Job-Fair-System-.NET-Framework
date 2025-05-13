@@ -32,8 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.jOBFAIREVENTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -45,6 +43,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.jOBFAIREVENTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.job_FairDataSet = new WindowsFormsApp1.Job_FairDataSet();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -54,6 +54,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.jOB_FAIR_EVENTSTableAdapter = new WindowsFormsApp1.Job_FairDataSetTableAdapters.JOB_FAIR_EVENTSTableAdapter();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.jOBFAIREVENTSBindingSource)).BeginInit();
@@ -98,16 +100,6 @@
             this.comboBox2.Size = new System.Drawing.Size(331, 28);
             this.comboBox2.TabIndex = 21;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // jOBFAIREVENTSBindingSource
-            // 
-            this.jOBFAIREVENTSBindingSource.DataMember = "JOB_FAIR_EVENTS";
-            this.jOBFAIREVENTSBindingSource.DataSource = this.job_FairDataSet;
-            // 
-            // job_FairDataSet
-            // 
-            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
-            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dateTimePicker1
             // 
@@ -216,9 +208,21 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Interview ID : ";
             // 
+            // jOBFAIREVENTSBindingSource
+            // 
+            this.jOBFAIREVENTSBindingSource.DataMember = "JOB_FAIR_EVENTS";
+            this.jOBFAIREVENTSBindingSource.DataSource = this.job_FairDataSet;
+            // 
+            // job_FairDataSet
+            // 
+            this.job_FairDataSet.DataSetName = "Job_FairDataSet";
+            this.job_FairDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel3.Controls.Add(this.button9);
+            this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button10);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button6);
@@ -232,7 +236,7 @@
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(17, 248);
+            this.button10.Location = new System.Drawing.Point(17, 411);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(165, 36);
             this.button10.TabIndex = 9;
@@ -242,7 +246,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(17, 202);
+            this.button5.Location = new System.Drawing.Point(17, 286);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(165, 36);
             this.button5.TabIndex = 3;
@@ -252,7 +256,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(17, 123);
+            this.button6.Location = new System.Drawing.Point(17, 194);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(165, 73);
             this.button6.TabIndex = 2;
@@ -262,7 +266,7 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(17, 81);
+            this.button7.Location = new System.Drawing.Point(17, 152);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(165, 36);
             this.button7.TabIndex = 1;
@@ -272,7 +276,7 @@
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(17, 39);
+            this.button8.Location = new System.Drawing.Point(17, 17);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(165, 36);
             this.button8.TabIndex = 0;
@@ -303,6 +307,28 @@
             // jOB_FAIR_EVENTSTableAdapter
             // 
             this.jOB_FAIR_EVENTSTableAdapter.ClearBeforeFill = true;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(17, 59);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(165, 80);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Manage Companies";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("The Bold Font", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(17, 345);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(165, 36);
+            this.button9.TabIndex = 13;
+            this.button9.Text = "Finalize Hiring";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // recruiter_interview2
             // 
@@ -356,5 +382,7 @@
         private Job_FairDataSet job_FairDataSet;
         private System.Windows.Forms.BindingSource jOBFAIREVENTSBindingSource;
         private Job_FairDataSetTableAdapters.JOB_FAIR_EVENTSTableAdapter jOB_FAIR_EVENTSTableAdapter;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button9;
     }
 }

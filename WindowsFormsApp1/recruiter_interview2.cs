@@ -143,5 +143,20 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            manage_companies manage_Companies = new manage_companies();
+            manage_Companies.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Hiring hiring = new Hiring();
+
+            hiring.Show();
+            this.Hide();
+        }
     }
 }

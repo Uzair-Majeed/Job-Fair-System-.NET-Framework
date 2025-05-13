@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
         {
             SqlConnection conn = new SqlConnection("Data Source=DESKTOP-MHBH552\\SQLEXPRESS;Initial Catalog=Job_Fair;Integrated Security=True");
             conn.Open();
-            string queryComboBox = "SELECT jp.Title AS Job_Title FROM INTERVIEWS i JOIN RECRUITER r ON i.recruiter_ID = r.recruiter_ID JOIN APPLICATION a ON a.applicant_ID = i.student_ID AND a.recruiter_ID = i.recruiter_ID JOIN JOB_POSTING jp ON jp.job_ID = a.job_ID WHERE i.student_ID =  @StudentId";
+            string queryComboBox = "SELECT jp.Title AS Job_Title FROM INTERVIEWS i JOIN RECRUITER r ON i.recruiter_ID = r.recruiter_ID JOIN APPLICATION a ON a.applicant_ID = i.student_ID AND a.recruiter_ID = i.recruiter_ID JOIN JOB_POSTING jp ON jp.job_ID = a.job_ID WHERE i.student_ID =  @StudentId and i.status = 'Completed'";
             SqlCommand cmdComboBox = new SqlCommand(queryComboBox, conn);
 
             cmdComboBox.Parameters.AddWithValue("@StudentId", student_dashboard.getUserId());

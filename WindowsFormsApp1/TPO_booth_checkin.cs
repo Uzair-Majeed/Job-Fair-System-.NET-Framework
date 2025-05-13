@@ -81,5 +81,26 @@ order by bt.booth_Traffic desc", con); // Adjust fields/table names
             //this.bOOTH_CHECKINTableAdapter.Fill(this.job_FairDataSet1.BOOTH_CHECKIN);
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            REPORT_Interface rEPORT_Interface = new REPORT_Interface();
+            this.Hide();
+            rEPORT_Interface.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            User_Manage user_Manage = new User_Manage();
+            this.Hide();
+            user_Manage.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            approve_reject approve_Reject = new approve_reject();
+            this.Hide();
+            approve_Reject.Show();
+        }
     }
 }

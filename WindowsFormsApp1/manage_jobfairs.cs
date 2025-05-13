@@ -143,8 +143,40 @@ namespace WindowsFormsApp1
         private void manage_jobfairs_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'job_FairDataSet1.JOB_FAIR_EVENTS' table. You can move, or remove it, as needed.
-            this.jOB_FAIR_EVENTSTableAdapter1.Fill(this.job_FairDataSet1.JOB_FAIR_EVENTS);
+            //this.jOB_FAIR_EVENTSTableAdapter1.Fill(this.job_FairDataSet.JOB_FAIR_EVENTS);
   
+            this.jOB_FAIR_EVENTSTableAdapter.Fill(this.job_FairDataSet.JOB_FAIR_EVENTS);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            approve_reject approve_Reject = new approve_reject();
+            this.Hide();
+            approve_Reject.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            User_Manage user_Manage = new User_Manage();
+            this.Hide();
+
+            user_Manage.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            REPORT_Interface rEPORT_Interface = new REPORT_Interface();
+            this.Hide();
+            rEPORT_Interface.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
